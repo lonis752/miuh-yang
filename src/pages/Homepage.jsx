@@ -1,5 +1,4 @@
 import { Content } from "../components/Content";
-import { NavbarMobile } from "../components/NavbarMobile";
 import { SideMenu } from "../components/SideMenu";
 
 function Homepage() {

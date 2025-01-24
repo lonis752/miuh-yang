@@ -7,10 +7,10 @@ export const Content = () => {
         <Link to="/miuh-yang/korean-war">
           <div className="flex justify-center items-center cursor-pointer">
             <img
-              className="object-contain rounded-sm w-3/4 shadow-lg shadow-gray-300 hover:transition-shadow hover:duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
-              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/gallery%20banner%201.jpg?updatedAt=1737497450188"
+              className="png object-contain rounded-sm w-3/4"
+              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner1.png"
             />
-            <div className="flex flex-col rounded justify-center -ml-20 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2">
+            <div className="flex flex-col rounded justify-center -ml-20 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2 z-0">
               <h1 className="text-md sm:text-2xl md:text-3xl font-bold">
                 Korean War Memorial
               </h1>
@@ -22,7 +22,7 @@ export const Content = () => {
         </Link>
 
         <div className="flex flex-row justify-center items-center">
-          <div className="flex flex-col rounded justify-center -mr-20 sm:-mr-32 bg-white sm:p-6 shadow-md z-0 max-w-64 p-2">
+          <div className="flex flex-col rounded justify-center -mr-14 sm:-mr-32 bg-white sm:p-6 shadow-md z-0 max-w-64 p-2">
             <h1 className="text-md sm:text-2xl md:text-3xl font-bold">
               Shroud Work
             </h1>
@@ -30,7 +30,7 @@ export const Content = () => {
           </div>
           <img
             className="object-contain rounded-sm w-3/4 shadow-lg shadow-gray-300 hover:transition-shadow hover:duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
-            src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/gallery%20banner%201.jpg?updatedAt=1737497450188"
+            src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner2.jpg?updatedAt=1737675169808"
           />
         </div>
 
@@ -38,11 +38,11 @@ export const Content = () => {
           <div className="flex justify-center items-center cursor-pointer">
             <img
               className="object-contain rounded-sm w-3/4 shadow-lg shadow-gray-300 hover:transition-shadow hover:duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
-              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/gallery%20banner%201.jpg?updatedAt=1737497450188"
+              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner3.jpg?updatedAt=1737675169494"
             />
-            <div className="flex flex-col rounded justify-center -ml-20 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2">
+            <div className="flex flex-col rounded justify-center -ml-10 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2">
               <h1 className="text-md sm:text-2xl md:text-3xl font-bold">
-                Korean War Memorial
+                Textile Art
               </h1>
               <p className="hidden md:block">
                 little write up of the gallery and what to expect inside
