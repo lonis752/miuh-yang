@@ -1,6 +1,13 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+  
   return (
     <>
       <div className="flex flex-col items-center p-5 gap-1 bg-gray-50">
@@ -21,7 +28,7 @@ function Footer() {
             width={30}
             src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png?updatedAt=1737666545585"
           />
-          <p>@ 2025 miuhyang.com All rights reserved</p>
+          <p>{`© ${year} miuhyang.com All Rights Reserved.`}</p>
         </div>
       </div>
     </>

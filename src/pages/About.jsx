@@ -6,16 +6,16 @@ function About() {
       <div className="flex justify-around gap-8">
         <SideMenu />
         <div className="flex flex-col md:flex-row items-center justify-center">
-          <div className="flex flex-col gap-32 justify-center items-center mt-10">
-            <div className="flex flex-col items-center gap-4">
-              <div>
+          <div className="flex flex-col gap-2 justify-center items-center mt-10">
+            <div className="flex flex-col items-center">
+              <div className="pb-6">
                 <h1 className="text-md sm:text-2xl md:text-3xl font-bold">
                   Artist Statement
                 </h1>
                 <h4 className="text-sm sm:text-lg md:text-xl">Miuh Yang</h4>
               </div>
               <div className="flex items-center gap-5">
-                <div className="-mr-24 z-0 bg-white rounded">
+                <div className="-mr-24 z-10 bg-opacity-80 bg-white rounded p-2">
                   <p className="max-w-56">
                     Until I called her name, She had been No more than a mere
                     gesture. When I called her name, She came to me And became a
@@ -23,11 +23,11 @@ function About() {
                   </p>
                   <p className="max-w-60"> - “The Flower” by Chun Su Kim</p>
                 </div>
-                <img src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png" />
+                <img className="png" src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png" />
               </div>
               <div className="flex items-center p-10">
                 <img className="hidden md:block" src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/about3.png" />
-                <p className="max-w-md md:-ml-24 z-0 bg-white rounded-xs">
+                <p className="max-w-md md:-ml-24 z-0 bg-white rounded-xs p-2 bg-opacity-50">
                   My work is about the practice of appreciating, meditating and
                   painting the everyday. I enjoy flowers for their obvious
                   beauty, fragility and splendour. They are also very expressive
@@ -42,7 +42,7 @@ function About() {
                 </p>
               </div>
               <div className="flex items-center p-10">
-                <p className="max-w-md md:-mr-36 z-0 bg-white rounded-xs">
+                <p className="max-w-md md:-mr-36 z-0 bg-opacity-95 bg-white rounded p-2">
                   Flowers in my work are small, scattered and fragmented. I
                   often arranged them in a grid with an individual background. I
                   paint flowers on fabric and they are often hand-sewn together,
@@ -56,7 +56,7 @@ function About() {
                   about appreciating the poetics of life.
                 </p>
                 <img
-                  className="shadow-lg shadow-gray-400 hidden md:block rounded-xs"
+                  className="shadow-lg shadow-gray-500 hidden md:block rounded-xs"
                   width={300}
                   src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/about2.jpg"
                 />
@@ -74,17 +74,17 @@ function About() {
                 Korea in 2004.
               </p>
               <img
-                className="max-w-56"
+                className="max-w-56 rounded"
                 src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/artist.jpg?updatedAt=1737663368820"
               />
-              <h1>Curriculum Vitae</h1>
-              <ul className="pb-10">
+              <h1 className="text-md sm:text-lg md:text-xl font-bold pt-5">Curriculum Vitae</h1>
+              <ul className="pb-20 flex flex-col gap-3">
                 <li>2015. 5 Moduart selective joined Art fair Vancouver</li>
-                <li>2015. 3 Four person Art exhibition at potter's gallery</li>
+                <li>2015. 3 Four person Art exhibition at Potter's Gallery</li>
                 <li>2005-2013 Korean artist annual group exhibition</li>
-                <li>2006. 9 Duet art exhibition at Art Beatus gallery</li>
-                <li>2005. 12 Winter group exhibition at Art Beatus gallery</li>
-                <li>2005. 5 Solo exhibition at Covan art gallery</li>
+                <li>2006. 9 Duet art exhibition at Art Beatus Gallery</li>
+                <li>2005. 12 Winter group exhibition at Art Beatus Gallery</li>
+                <li>2005. 5 Solo exhibition at Covan art Gallery</li>
                 <li>2004. 7 The 1st solo exhibition at Gana art centre</li>
                 <li>1993-2000 My decorating space designer/ owner</li>
                 <li>1993. 9 FIDM - Diploma in fashion design</li>
