@@ -7,10 +7,10 @@ function Footer() {
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
-  
+
   return (
     <>
-      <div className="flex flex-col items-center p-5 gap-1 bg-gray-50">
+      <div className="flex flex-col items-center p-5 gap-1 max-w-screen">
         <Link to="/miuh-yang/about">
           <p>About</p>
         </Link>
@@ -24,10 +24,12 @@ function Footer() {
           <p>Sitemap</p>
         </Link>
         <div className="flex items-center gap-3">
-          <img
-            width={30}
-            src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png?updatedAt=1737666545585"
-          />
+          <Link to="/miuh-yang/">
+            <img
+              width={30}
+              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png?updatedAt=1737666545585"
+            />
+          </Link>
           <p>{`© ${year} miuhyang.com All Rights Reserved.`}</p>
         </div>
       </div>

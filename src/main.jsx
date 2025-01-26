@@ -10,7 +10,6 @@ import ShroudGallery from './pages/ShroudGallery.jsx';
 import TextileGallery from './pages/TextileGallery.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
-import Gallery from './pages/Gallery.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 
 const router = createBrowserRouter([
@@ -40,10 +39,6 @@ const router = createBrowserRouter([
       {
         path: "/miuh-yang/contact",
         element: <Contact />
-      },
-      {
-        path: "/miuh-yang/gallery",
-        element: <Gallery />
       },
       {
         path: "/miuh-yang/privacy-policy",

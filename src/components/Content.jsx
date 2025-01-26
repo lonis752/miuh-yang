@@ -7,7 +7,7 @@ export const Content = () => {
         <Link to="/miuh-yang/korean-war">
           <div className="flex justify-center items-center cursor-pointer">
             <img
-              className="png object-contain rounded-sm w-3/4"
+              className="png object-contain rounded-sm w-2/3"
               src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner1.png?updatedAt=1737697113890"
             />
             <div className="flex flex-col rounded justify-center -ml-20 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2 z-0">
@@ -29,18 +29,18 @@ export const Content = () => {
             <p className="hidden md:block">little write up</p>
           </div>
           <img
-            className="object-contain rounded-sm w-3/4 shadow-lg shadow-gray-300 hover:transition-shadow hover:duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
-            src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner2.png?updatedAt=1737697239872"
+            className="object-contain rounded-sm w-2/4 shadow-lg shadow-gray-300 hover:transition-shadow hover:duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
+            src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/20191026-LMH-4204.jpg"
           />
         </div>
 
         <Link to="/miuh-yang/textile">
           <div className="flex justify-center items-center cursor-pointer">
             <img
-              className="object-contain rounded-sm w-3/4 shadow-lg shadow-gray-300 hover:transition-shadow hover:duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
-              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner3.png?updatedAt=1737697239855"
+              className="png object-contain rounded-sm w-96 cursor-pointer"
+              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner3.png?updatedAt=1737760060053"
             />
-            <div className="flex flex-col rounded justify-center -ml-10 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2">
+            <div className="flex flex-col z-10 rounded justify-center -ml-10 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2">
               <h1 className="text-md sm:text-2xl md:text-3xl font-bold">
                 Textile Art
               </h1>
