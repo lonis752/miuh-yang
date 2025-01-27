@@ -43,7 +43,7 @@ function About() {
                 </p>
               </div>
               <div className="flex items-center p-5">
-                <p className="max-w-md md:-mr-36 z-0 bg-opacity-95 bg-white rounded p-2">
+                <p className="max-w-md -mr-16 md:-mr-36 z-0 bg-opacity-95 bg-white rounded p-2">
                   In their installation “3,227,082 Stitches,” Miuh Yang reflects
                   on collective memory and gratitude, honouring the sacrifices
                   of the 3,227,082 military personnel from 23 nations who aided
@@ -54,7 +54,7 @@ function About() {
                 </p>
                 <img
                   loading="lazy"
-                  className="shadow-lg shadow-gray-500 hidden md:block rounded"
+                  className="shadow-lg shadow-gray-500 rounded"
                   width={300}
                   src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/about2.jpeg"
                 />

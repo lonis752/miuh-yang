@@ -38,7 +38,7 @@ export const Content = () => {
         <Link to="/miuh-yang/textile">
           <div className="flex justify-center items-center cursor-pointer">
             <img
-              className="png object-contain rounded-sm w-1/2 cursor-pointer"
+              className="png object-contain rounded-sm w-1/3 sm:w-1/2 cursor-pointer"
               src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner3.png?updatedAt=1737760060053"
             />
             <div className="flex flex-col z-10 rounded justify-center -ml-10 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2">
