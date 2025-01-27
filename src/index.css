@@ -19,3 +19,11 @@
   -webkit-filter: drop-shadow(3px 3px 3px #373737);
   filter: drop-shadow(3px 3px 3px #373737);
 }
+
+.zoom {
+  transition: transform 1s;
+}
+
+.zoom:hover {
+  transform: scale(1.25);
+}

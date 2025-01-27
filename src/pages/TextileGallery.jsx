@@ -1,7 +1,10 @@
+import { SideMenu } from "../components/SideMenu";
+
 function TextileGallery() {
   return (
     <>
-      <div>
+      <div className="flex justify-around gap-8">
+        <SideMenu />
         <div className="flex items-center gap-5">
           <div className="-mr-24 z-10 bg-opacity-80 bg-white rounded p-2">
             <p className="max-w-56">

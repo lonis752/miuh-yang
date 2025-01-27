@@ -26,8 +26,9 @@ function About() {
                   together.
                 </p>
               </div>
-              <div className="flex items-center p-10">
+              <div className="flex items-center p-5">
                 <img
+                  loading="lazy"
                   className="png"
                   src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png"
                 />
@@ -41,7 +42,7 @@ function About() {
                   but a way of appreciating the subtleties of daily life.
                 </p>
               </div>
-              <div className="flex items-center p-10">
+              <div className="flex items-center p-5">
                 <p className="max-w-md md:-mr-36 z-0 bg-opacity-95 bg-white rounded p-2">
                   In their installation “3,227,082 Stitches,” Miuh Yang reflects
                   on collective memory and gratitude, honouring the sacrifices
@@ -52,6 +53,7 @@ function About() {
                   to peace and resilience.
                 </p>
                 <img
+                  loading="lazy"
                   className="shadow-lg shadow-gray-500 hidden md:block rounded"
                   width={300}
                   src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/about2.jpeg"
@@ -60,19 +62,19 @@ function About() {
             </div>
             <div className="flex items-center p-10">
               <img
+                loading="lazy"
                 className="hidden md:block w-1/3 ml-40 rounded shadow-lg shadow-gray-500"
                 src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/about1.jpg"
               />
               <p className="max-w-md md:-ml-40 z-0 bg-white rounded p-2 bg-opacity-80">
-                Another aspect of her practice is their exploration of
-                mortality and the rituals of departure, culminating from her
-                reflective piece on creating a burial shroud for their father.
-                This deeply personal work transforms grief into an expression of
-                love and transcendence, framing death as a passage to eternal
-                connection.
+                Another aspect of her practice is their exploration of mortality
+                and the rituals of departure, culminating from her reflective
+                piece on creating a burial shroud for their father. This deeply
+                personal work transforms grief into an expression of love and
+                transcendence, framing death as a passage to eternal connection.
               </p>
             </div>
-            <div className="flex items-center p-5">
+            <div className="flex items-center p-5 border-b-2">
               <p className="max-w-md z-0 bg-white rounded-xs p-2 bg-opacity-50">
                 Whether through floral studies, burial garments, or meditations
                 on mortality, Miuh Yang’s work invites viewers to contemplate
@@ -83,11 +85,15 @@ function About() {
               </p>
             </div>
             <div className="flex flex-col items-center gap-2 max-w-lg">
-            <img
+              <h1 className="text-md sm:text-lg md:text-xl font-bold pt-10">
+                Artist Bio
+              </h1>
+              <img
+                loading="lazy"
                 className="max-w-56 rounded"
                 src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/artist.jpg?updatedAt=1737663368820"
               />
-              <p className="max-w-lg border-t p-10 pb-20">
+              <p className="max-w-lg p-10">
                 * Me-Hyang Yang is a Korean-Canadian Artist living and working
                 in Vancouver, Canada. She was graduated from Hong Ik University
                 in Korea (BFA in Fabric Arts) in 1992. Since immigrating to
@@ -96,28 +102,58 @@ function About() {
                 philosophy. Her first solo show was held at Gana Art Centre,
                 Korea in 2004.
               </p>
-              
-              <h1 className="text-md sm:text-lg md:text-xl font-bold pt-5">
-                Artist Bio
-              </h1>
+
               <ul className="pb-20 flex flex-col gap-3">
-                <li><strong>2019</strong> The 3rd Exhibition at Duru Artspace in Korea</li>
-                <li><strong>2018-2019</strong> Park Art Salon participant</li>
-                <li><strong>2015-2016</strong> Moduart Selective joined Art Fair Vancouver</li>
-                <li><strong>2015</strong> Four Artist Art Exhibition at Potter Gallery</li>
                 <li>
-                <strong>2012</strong> 3rd Solo Exhibition at Joe’s Galley in Vancouver
+                  <strong>2019</strong> The 3rd Exhibition at Duru Artspace in
+                  Korea
                 </li>
-                <li><strong>2007</strong> 2nd Solo Exhibition at COVAN ART in Vancouver</li>
-                <li><strong>2006</strong> Duet Art Exhibition at Art Beatus Gallery</li>
-                <li><strong>2005-2015</strong> Annual Group Exhibition of the Korean Art Association</li>
-                <li><strong>2005</strong> Winter Group Exhibition at Art Beatus Gallery</li>
-                <li><strong>2005</strong> Solo exhibition at Covan art Gallery</li>
-                <li><strong>2004</strong> 1st Solo Exhibition at Gana Art Centre</li>
-                <li><strong>1993-2000</strong> My Decorating Space Designer/Owner</li>
-                <li><strong>1993</strong> FIDM - Diploma in fashion design</li>
                 <li>
-                <strong>1992</strong> Hong Ik University - Bachelor's degree in fabric arts
+                  <strong>2018-2019</strong> Park Art Salon participant
+                </li>
+                <li>
+                  <strong>2015-2016</strong> Moduart Selective joined Art Fair
+                  Vancouver
+                </li>
+                <li>
+                  <strong>2015</strong> Four Artist Art Exhibition at Potter
+                  Gallery
+                </li>
+                <li>
+                  <strong>2012</strong> 3rd Solo Exhibition at Joe’s Galley in
+                  Vancouver
+                </li>
+                <li>
+                  <strong>2007</strong> 2nd Solo Exhibition at COVAN ART in
+                  Vancouver
+                </li>
+                <li>
+                  <strong>2006</strong> Duet Art Exhibition at Art Beatus
+                  Gallery
+                </li>
+                <li>
+                  <strong>2005-2015</strong> Annual Group Exhibition of the
+                  Korean Art Association
+                </li>
+                <li>
+                  <strong>2005</strong> Winter Group Exhibition at Art Beatus
+                  Gallery
+                </li>
+                <li>
+                  <strong>2005</strong> Solo exhibition at Covan art Gallery
+                </li>
+                <li>
+                  <strong>2004</strong> 1st Solo Exhibition at Gana Art Centre
+                </li>
+                <li>
+                  <strong>1993-2000</strong> My Decorating Space Designer/Owner
+                </li>
+                <li>
+                  <strong>1993</strong> FIDM - Diploma in fashion design
+                </li>
+                <li>
+                  <strong>1992</strong> Hong Ik University - Bachelor's degree
+                  in fabric arts
                 </li>
               </ul>
             </div>
