@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 function MemGalleryComp() {
+  const [frontImg, setFrontImg] = useState("");
+
+  function handleClick(e) {
+    setFrontImg(e.target)
+  }
+
+console.log(frontImg)
   return (
     <div className="p-10 flex flex-col gap-10">
       <h1 className="text-lg sm:text-3xl md:text-3xl font-bold">
@@ -14,7 +23,8 @@ function MemGalleryComp() {
         period of me.
       </p>
 
-      <div className="flex flex-col-reverse sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center">
+      <div
+          onClick={handleClick} className="flex flex-col-reverse sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center">
         <div className="flex flex-col justify-end min-w-36">
           <p>
             <strong>Korea</strong>
@@ -29,7 +39,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-2/4"
@@ -58,7 +68,7 @@ function MemGalleryComp() {
       </p>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -101,7 +111,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -116,7 +126,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -159,7 +169,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -174,7 +184,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -217,7 +227,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -232,7 +242,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -275,7 +285,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -290,7 +300,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -333,7 +343,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -348,7 +358,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -390,7 +400,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -405,7 +415,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -447,7 +457,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -461,7 +471,7 @@ function MemGalleryComp() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -503,7 +513,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -518,7 +528,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -561,7 +571,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -576,7 +586,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -619,7 +629,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/3"
@@ -634,7 +644,7 @@ function MemGalleryComp() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
@@ -677,7 +687,7 @@ function MemGalleryComp() {
             <strong>Media:</strong> Fabric, Yarn
           </p>
         </div>
-        <div className="flex gap-10 p-5">
+        <div className="flex gap-16 p-5 pr-16">
           <img
             loading="lazy"
             className="png zoom object-contain rounded-sm w-1/2"
