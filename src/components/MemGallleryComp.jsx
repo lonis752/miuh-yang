@@ -1,13 +1,14 @@
 import { useState } from "react";
+import {
+  Description,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
 
 function MemGalleryComp() {
-  const [frontImg, setFrontImg] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
-  function handleClick(e) {
-    setFrontImg(e.target)
-  }
-
-console.log(frontImg)
   return (
     <div className="p-10 flex flex-col gap-10">
       <h1 className="text-lg sm:text-3xl md:text-3xl font-bold">
@@ -23,8 +24,7 @@ console.log(frontImg)
         period of me.
       </p>
 
-      <div
-          onClick={handleClick} className="flex flex-col-reverse sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center">
+      <div className="flex flex-col-reverse sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center">
         <div className="flex flex-col justify-end min-w-36">
           <p>
             <strong>Korea</strong>
@@ -41,11 +41,42 @@ console.log(frontImg)
         </div>
         <div className="flex gap-16 p-5 pr-16">
           <img
+            onClick={() => setIsOpen(true)}
             loading="lazy"
             className="png zoom object-contain rounded-sm w-2/4"
             src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/Korean%20War/KoreaFront.png"
           />
+          <Dialog
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            className="relative z-50"
+          >
+            <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+              <DialogPanel className="max-w-screen space-y-4 border bg-white p-12">
+                <DialogTitle className="font-bold">
+                  <strong>Title:</strong> 1,269,349
+                </DialogTitle>
+                <Description>
+                  <strong>Korea (Front)</strong>
+                </Description>
+                <div className="flex flex-col gap-5 items-center">
+                  <img
+                    loading="lazy"
+                    className="png object-contain rounded-sm w-2/4"
+                    src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/Korean%20War/KoreaFront.png"
+                  />
+                  <p>
+                    <strong>Size:</strong> 165 X 196cm
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <button onClick={() => setIsOpen(false)}>Close</button>
+                </div>
+              </DialogPanel>
+            </div>
+          </Dialog>
           <img
+            onClick={() => setIsOpen(true)}
             loading="lazy"
             className="png zoom object-contain rounded-sm w-2/4"
             src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/Korean%20War/Korea%20Back.png"
