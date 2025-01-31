@@ -5,6 +5,7 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
+import ImageMagnifier from "./ImageMagnifier";
 
 function MemGalleryComp() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +50,7 @@ function MemGalleryComp() {
           <Dialog
             open={isOpen}
             onClose={() => setIsOpen(false)}
-            className="relative z-50"
+            className="relative z-20"
           >
             <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
               <DialogPanel className="max-w-screen space-y-4 border bg-white p-12">
@@ -60,7 +61,8 @@ function MemGalleryComp() {
                   <strong>Korea (Front)</strong>
                 </Description>
                 <div className="flex flex-col gap-5 items-center">
-                  <img
+                  <ImageMagnifier
+                    onClick={() => setIsOpen(true)}
                     loading="lazy"
                     className="png object-contain rounded-sm w-2/4"
                     src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/Korean%20War/KoreaFront.png"
@@ -81,6 +83,36 @@ function MemGalleryComp() {
             className="png zoom object-contain rounded-sm w-2/4"
             src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/Korean%20War/Korea%20Back.png"
           />
+          <Dialog
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            className="relative z-20"
+          >
+            <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+              <DialogPanel className="max-w-screen space-y-4 border bg-white p-12">
+                <DialogTitle className="font-bold">
+                  <strong>Title:</strong> 1,269,349
+                </DialogTitle>
+                <Description>
+                  <strong>Korea (Front)</strong>
+                </Description>
+                <div className="flex flex-col gap-5 items-center">
+                  <ImageMagnifier
+                    onClick={() => setIsOpen(true)}
+                    loading="lazy"
+                    className="png object-contain rounded-sm w-2/4"
+                    src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/Korean%20War/Korea%20Back.png"
+                  />
+                  <p>
+                    <strong>Size:</strong> 165 X 196cm
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <button onClick={() => setIsOpen(false)}>Close</button>
+                </div>
+              </DialogPanel>
+            </div>
+          </Dialog>
         </div>
       </div>
       <p className="border-t pt-10">
