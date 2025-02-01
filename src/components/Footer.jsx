@@ -20,9 +20,9 @@ function Footer() {
         <Link to="/miuh-yang/privacy-policy">
           <p>Privacy Policy</p>
         </Link>
-        <Link to="/sitemap.xml">
+        <a href="https://www.miuhyang.com/sitemap.xml">
           <p>Sitemap</p>
-        </Link>
+        </a>
         <div className="flex items-center gap-3">
           <Link to="/miuh-yang/">
             <img

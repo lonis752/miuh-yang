@@ -29,12 +29,12 @@ function MemGalleryComp() {
       </h1>
       <p className="border-b p-10">
         Title of Art Installation: “3,227,082 Stitches” This art installation
-        showcases a body of textile work that memorializes the twenty- three
+        showcases a body of textile work that memorializes the twenty-three
         countries that aided South Korea during the Korean War from 1950-53.
         Each of these countries sent military forces, sanctioned by the United
         Nations, to end the violence in South Korea. The goal of my work is to
         honour the sacrifices of the military men and women during this painful
-        period of me.
+        period.
       </p>
 
       <div className="flex flex-col-reverse sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center">
@@ -69,8 +69,9 @@ function MemGalleryComp() {
           >
             <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
               <DialogPanel className="max-w-screen space-y-4 border bg-white p-12">
-                <DialogTitle className="font-bold">
-                  <strong>Title:</strong> {selectedTitle}
+                <DialogTitle className="font-bold flex justify-between">
+                  <p><strong>Title:</strong> {selectedTitle}</p>
+                  <button className="text-red-700" onClick={() => setIsOpen(false)}>Close</button>
                 </DialogTitle>
                 <Description>
                   <strong>{selectedDesc}</strong>
@@ -84,9 +85,6 @@ function MemGalleryComp() {
                   <p>
                     <strong>Size:</strong> {selectedSize}
                   </p>
-                </div>
-                <div className="flex gap-4">
-                  <button onClick={() => setIsOpen(false)}>Close</button>
                 </div>
               </DialogPanel>
             </div>
@@ -114,7 +112,7 @@ function MemGalleryComp() {
         Despite continuing conflicts around the world today, we all share a
         fundamental wish for peace, understanding and connection. We are woven
         together, like threads in a garment, both strong and fragile, in this
-        warp and we of life.
+        warp of life.
       </p>
 
       <div className="flex flex-col sm:flex-row sm:pt-16 gap-5 sm:gap-10 justify-center border-t">

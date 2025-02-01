@@ -94,7 +94,7 @@ function About() {
                 src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/artist.jpg?updatedAt=1737663368820"
               />
               <p className="max-w-lg p-10">
-                * Me-Hyang Yang is a Korean-Canadian Artist living and working
+                Miuh Yang is a Korean-Canadian Artist living and working
                 in Vancouver, Canada. She was graduated from Hong Ik University
                 in Korea (BFA in Fabric Arts) in 1992. Since immigrating to
                 Canada in 2005, she has been producing paintings and quilts that
@@ -112,7 +112,7 @@ function About() {
                   <strong>2018-2019</strong> Park Art Salon participant
                 </li>
                 <li>
-                  <strong>2015-2016</strong> Moduart Selective joined Art Fair
+                  <strong>2015-2016</strong> Moduart Selective Joined Art Fair
                   Vancouver
                 </li>
                 <li>
@@ -124,7 +124,7 @@ function About() {
                   Vancouver
                 </li>
                 <li>
-                  <strong>2007</strong> 2nd Solo Exhibition at COVAN ART in
+                  <strong>2007</strong> 2nd Solo Exhibition at Covan Art in
                   Vancouver
                 </li>
                 <li>
@@ -140,7 +140,7 @@ function About() {
                   Gallery
                 </li>
                 <li>
-                  <strong>2005</strong> Solo exhibition at Covan art Gallery
+                  <strong>2005</strong> Solo Exhibition at Covan Art Gallery
                 </li>
                 <li>
                   <strong>2004</strong> 1st Solo Exhibition at Gana Art Centre
