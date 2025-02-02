@@ -4,7 +4,7 @@ export const Content = () => {
   return (
     <>
       <div className="flex flex-col p-8 gap-16 sm:gap-24 mt-12 mb-12 max-w-7xl">
-        <Link to="/miuh-yang/korean-war">
+        <Link to="/korean-war">
           <div className="flex justify-center items-center cursor-pointer">
             <img
               className="png object-contain rounded-sm w-2/3"
@@ -20,7 +20,7 @@ export const Content = () => {
             </div>
           </div>
         </Link>
-        <Link to="/miuh-yang/shroud">
+        <Link to="/shroud">
         <div className="flex flex-row justify-center items-center">
           <div className="flex flex-col rounded justify-center -mr-14 sm:-mr-32 bg-white sm:p-6 shadow-md z-0 max-w-64 p-2">
             <h1 className="text-md sm:text-2xl md:text-3xl font-bold">
@@ -35,7 +35,7 @@ export const Content = () => {
         </div>
         </Link>
 
-        <Link to="/miuh-yang/textile">
+        <Link to="/textile">
           <div className="flex justify-center items-center cursor-pointer">
             <img
               className="png object-contain rounded-sm w-1/3 sm:w-1/2 cursor-pointer"

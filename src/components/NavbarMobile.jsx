@@ -4,14 +4,14 @@ export const NavbarMobile = () => {
   return (
     <>
       <div className="z-20 md:hidden flex justify-between sticky top-0 p-5 bg-white">
-        <Link to="/miuh-yang/">
+        <Link to="/">
           <h1 className="text-2xl font-bold">MIUH YANG</h1>
         </Link>
         <div className="flex gap-5">
-          <Link to="/miuh-yang/about">
+          <Link to="/about">
             <p>About</p>
           </Link>
-          <Link to="/miuh-yang/contact">
+          <Link to="/contact">
             <p>Contact</p>
           </Link>
         </div>

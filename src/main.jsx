@@ -17,31 +17,31 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "/miuh-yang/",
+        path: "/",
         element: <Homepage />,
       },
       {
-        path: "/miuh-yang/korean-war",
+        path: "/korean-war",
         element: <MemGallery />
       },
       {
-        path: "/miuh-yang/shroud",
+        path: "/shroud",
         element: <ShroudGallery />
       },
       {
-        path: "/miuh-yang/textile",
+        path: "/textile",
         element: <TextileGallery />
       },
       {
-        path: "/miuh-yang/about",
+        path: "/about",
         element: <About />
       },
       {
-        path: "/miuh-yang/contact",
+        path: "/contact",
         element: <Contact />
       },
       {
-        path: "/miuh-yang/privacy-policy",
+        path: "/privacy-policy",
         element: <PrivacyPolicy />
       }
     ]

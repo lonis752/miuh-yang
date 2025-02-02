@@ -11,7 +11,7 @@ function Contact() {
             <img src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/contact1.png" />
             <div className="flex flex-col gap-10">
               <p>For any inqueries please send an email to:</p>
-              <p className="text-md sm:text-lg md:text-xl font-bold pb-28">email@email.com</p>
+              <p className="text-md sm:text-lg md:text-xl font-bold pb-28">lonk752@gmail.com</p>
             </div>
           </div>
         </div>
