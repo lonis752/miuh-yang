@@ -2,28 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
-  
-  text-align: center;
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
   margin: 0;
   padding: 0;
+  background-color: #f4efe7;
+  color: #171310;
+  font-family: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
 }
 
+::selection {
+  background: #8a3b2e;
+  color: #f4efe7;
+}
+
+/* Lenis smooth scroll (recommended base) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Legacy gallery hover styling (used by pages not yet redesigned) */
 .png {
-  -webkit-filter: drop-shadow(3px 3px 3px #4c4c4c);
-  filter: drop-shadow(3px 3px 3px #4c4c4c);
-  transition: box-shadow 0.3s;
+  filter: drop-shadow(2px 3px 6px rgba(23, 19, 16, 0.18));
+  transition: filter 0.3s ease;
 }
-
 .png:hover {
-  -webkit-filter: drop-shadow(3px 3px 3px #373737);
-  filter: drop-shadow(3px 3px 3px #373737);
+  filter: drop-shadow(3px 5px 10px rgba(23, 19, 16, 0.28));
 }
-
 .zoom {
-  transition: transform 1s;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .zoom:hover {
-  transform: scale(1.25);
+  transform: scale(1.04);
 }

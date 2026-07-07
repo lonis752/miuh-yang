@@ -1,39 +1,59 @@
 import { Link } from "react-router-dom";
-import { ik } from "../lib/imagekit";
+
+const galleries = [
+  { to: "/korean-war", label: "3,227,082 Stitches" },
+  { to: "/shroud", label: "The Shroud" },
+  { to: "/textile", label: "Floral & Textile" },
+];
 
 function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <>
-      <div className="flex flex-col items-center p-5 gap-1 max-w-screen">
-        <Link to="/about">
-          <p>About</p>
-        </Link>
-        <Link to="/contact">
-          <p>Contact</p>
-        </Link>
-        <Link to="/privacy-policy">
-          <p>Privacy Policy</p>
-        </Link>
-        <a href="/sitemap.xml">
-          <p>Sitemap</p>
-        </a>
-        <div className="flex items-center gap-3">
-          <Link to="/">
-            <img
-              width={30}
-              height={30}
-              alt="Miuh Yang home"
-              loading="lazy"
-              decoding="async"
-              src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png?updatedAt=1737666545585", { w: 60 })}
-            />
-          </Link>
-          <p>{`© ${year} miuhyang.com All Rights Reserved.`}</p>
+    <footer className="border-t border-line bg-shade">
+      <div className="mx-auto max-w-[1400px] px-6 py-16 sm:px-10">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div>
+            <p className="font-display text-3xl text-ink">Miuh Yang</p>
+            <p className="mt-3 max-w-prose text-sm leading-relaxed text-muted">
+              A Korean-Canadian textile artist working in Vancouver — weaving
+              memory, loss, and the quiet poetics of everyday life.
+            </p>
+          </div>
+
+          <nav className="flex flex-col gap-3">
+            <p className="text-xs uppercase tracking-eyebrow text-muted">The Work</p>
+            {galleries.map((g) => (
+              <Link
+                key={g.to}
+                to={g.to}
+                className="text-sm text-ink/80 transition-colors hover:text-madder"
+              >
+                {g.label}
+              </Link>
+            ))}
+          </nav>
+
+          <nav className="flex flex-col gap-3">
+            <p className="text-xs uppercase tracking-eyebrow text-muted">Studio</p>
+            <Link to="/about" className="text-sm text-ink/80 transition-colors hover:text-madder">
+              About
+            </Link>
+            <Link to="/contact" className="text-sm text-ink/80 transition-colors hover:text-madder">
+              Contact
+            </Link>
+            <Link to="/privacy-policy" className="text-sm text-ink/80 transition-colors hover:text-madder">
+              Privacy Policy
+            </Link>
+          </nav>
+        </div>
+
+        <div className="mt-14 flex flex-col gap-2 border-t border-line pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>© {year} Miuh Yang. All rights reserved.</p>
+          <p className="uppercase tracking-eyebrow">Vancouver, Canada</p>
         </div>
       </div>
-    </>
+    </footer>
   );
 }
 
