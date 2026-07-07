@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ik } from "../lib/imagekit";
 
 export const Content = () => {
   return (
@@ -8,7 +9,10 @@ export const Content = () => {
           <div className="flex justify-center items-center cursor-pointer">
             <img
               className="png object-contain rounded-sm w-2/3"
-              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner1.png"
+              alt="Korean War Memorial textile work"
+              loading="lazy"
+              decoding="async"
+              src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner1.png", { w: 1000 })}
             />
             <div className="flex flex-col rounded justify-center -ml-20 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2 z-0">
               <h1 className="text-md sm:text-2xl md:text-3xl font-bold">
@@ -31,7 +35,10 @@ export const Content = () => {
             </div>
             <img
               className="object-contain rounded-sm w-2/4 shadow-lg shadow-gray-300 hover:transition-shadow hover:duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
-              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/20191026-LMH-4204.jpg"
+              alt="Shroud work"
+              loading="lazy"
+              decoding="async"
+              src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/20191026-LMH-4204.jpg", { w: 1000 })}
             />
           </div>
         </Link>
@@ -40,7 +47,10 @@ export const Content = () => {
           <div className="flex justify-center items-center cursor-pointer">
             <img
               className="png object-contain rounded-sm w-1/3 sm:w-1/2 cursor-pointer"
-              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner3.png?updatedAt=1737760060053"
+              alt="Textile art"
+              loading="lazy"
+              decoding="async"
+              src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/banner3.png?updatedAt=1737760060053", { w: 1000 })}
             />
             <div className="flex flex-col z-10 rounded justify-center -ml-10 sm:-ml-32 bg-white sm:p-6 shadow-md gap-2 max-w-64 p-2">
               <h1 className="text-md sm:text-2xl md:text-3xl font-bold">

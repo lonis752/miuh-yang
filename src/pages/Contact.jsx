@@ -1,4 +1,5 @@
 import { SideMenu } from "../components/SideMenu";
+import { ik } from "../lib/imagekit";
 
 function Contact() {
   return (
@@ -8,7 +9,12 @@ function Contact() {
         <div className="flex flex-col gap-20 pt-20">
           <h1 className="text-md sm:text-2xl md:text-3xl font-bold">Contact</h1>
           <div className="flex flex-col gap-20">
-            <img src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/contact1.png" />
+            <img
+              alt="Miuh Yang"
+              loading="lazy"
+              decoding="async"
+              src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/contact1.png", { w: 1000 })}
+            />
             <div className="flex flex-col gap-10">
               <p>For any inqueries please send an email to:</p>
               <p className="text-md sm:text-lg md:text-xl font-bold pb-28">lonk752@gmail.com</p>

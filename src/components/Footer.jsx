@@ -1,12 +1,8 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ik } from "../lib/imagekit";
 
 function Footer() {
-  const [year, setYear] = useState(new Date().getFullYear());
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const year = new Date().getFullYear();
 
   return (
     <>
@@ -27,7 +23,11 @@ function Footer() {
           <Link to="/">
             <img
               width={30}
-              src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png?updatedAt=1737666545585"
+              height={30}
+              alt="Miuh Yang home"
+              loading="lazy"
+              decoding="async"
+              src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png?updatedAt=1737666545585", { w: 60 })}
             />
           </Link>
           <p>{`© ${year} miuhyang.com All Rights Reserved.`}</p>

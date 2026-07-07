@@ -1,4 +1,5 @@
 import { SideMenu } from "../components/SideMenu";
+import { ik } from "../lib/imagekit";
 
 function About() {
   return (
@@ -29,8 +30,10 @@ function About() {
               <div className="flex items-center p-5">
                 <img
                   loading="lazy"
+                  decoding="async"
+                  alt=""
                   className="png"
-                  src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png"
+                  src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png", { w: 200 })}
                 />
                 <p className="max-w-md md:-ml-24 z-0 bg-white rounded p-2 bg-opacity-90">
                   Flowers often serve as a recurring motif in her early work,
@@ -54,17 +57,21 @@ function About() {
                 </p>
                 <img
                   loading="lazy"
+                  decoding="async"
+                  alt="Detail of Miuh Yang's textile work"
                   className="shadow-lg shadow-gray-500 rounded"
                   width={300}
-                  src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/about2.jpeg"
+                  src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/about2.jpeg", { w: 600 })}
                 />
               </div>
             </div>
             <div className="flex items-center p-10">
               <img
                 loading="lazy"
+                decoding="async"
+                alt="Miuh Yang's burial shroud work"
                 className="hidden md:block w-1/3 ml-40 rounded shadow-lg shadow-gray-500"
-                src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/about1.jpg"
+                src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/about1.jpg", { w: 800 })}
               />
               <p className="max-w-md md:-ml-40 z-0 bg-white rounded p-2 bg-opacity-80">
                 Another aspect of her practice is their exploration of mortality
@@ -90,8 +97,10 @@ function About() {
               </h1>
               <img
                 loading="lazy"
+                decoding="async"
+                alt="Portrait of the artist, Miuh Yang"
                 className="max-w-56 rounded"
-                src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/artist.jpg?updatedAt=1737663368820"
+                src={ik("https://ik.imagekit.io/lonisk96/Miuh%20Yang/artist.jpg?updatedAt=1737663368820", { w: 450 })}
               />
               <p className="max-w-lg p-10">
                 Miuh Yang is a Korean-Canadian Artist living and working
