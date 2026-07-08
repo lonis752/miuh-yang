@@ -48,7 +48,7 @@ export default function StitchedText({ children, italic = false, className = "" 
       initial={{ clipPath: "inset(0 100% 0 0)" }}
       whileInView={{ clipPath: "inset(0 0% 0 0)" }}
       viewport={{ once: true, margin: "-10% 0px" }}
-      transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+      transition={{ duration: 3.6, ease: "linear", delay: 0.35 }}
     >
       <svg
         className="h-full w-full overflow-visible"
@@ -67,8 +67,8 @@ export default function StitchedText({ children, italic = false, className = "" 
           fontStyle={italic ? "italic" : "normal"}
           fill="rgba(23,19,16,0.07)"
           stroke="#8A3B2E"
-          strokeWidth="1.4"
-          strokeDasharray="5 3.5"
+          strokeWidth="1.7"
+          strokeDasharray="4 3"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
