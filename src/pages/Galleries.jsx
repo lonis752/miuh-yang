@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
 import Chapter from "../components/home/Chapter";
 import { homeChapters } from "../data/homeChapters";
+import { usePageMeta } from "../lib/usePageMeta";
 
 const EASE = [0.16, 1, 0.3, 1];
 
 function Galleries() {
+  usePageMeta(
+    "Galleries | Miuh Yang",
+    "Three bodies of textile work by Miuh Yang: the 3,227,082 Stitches Korean War memorial, the Shroud work, and Floral and Textile pieces."
+  );
   return (
     <div className="overflow-hidden">
       <section className="mx-auto max-w-[1400px] px-6 pb-6 pt-36 sm:px-10 sm:pt-48">

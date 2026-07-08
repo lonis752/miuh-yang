@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { usePageMeta } from "../lib/usePageMeta";
 
 const EASE = [0.16, 1, 0.3, 1];
 const EMAIL = "k0529ca@gmail.com";
@@ -16,6 +17,7 @@ const field =
   "w-full border-b border-line bg-transparent py-3 text-ink placeholder:text-muted/70 focus:border-madder focus:outline-none transition-colors";
 
 function Contact() {
+  usePageMeta("Contact | Miuh Yang", "Get in touch with textile artist Miuh Yang.");
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   async function handleSubmit(e) {

@@ -2,6 +2,7 @@ import { useArtworkViewer } from "../components/ArtworkViewer";
 import { Reveal } from "../components/motion/Reveal";
 import { ik, ikSrcSet } from "../lib/imagekit";
 import { textileTitle, textileText, textilePieces } from "../data/textilePieces";
+import { usePageMeta } from "../lib/usePageMeta";
 
 /* eslint-disable-next-line react/prop-types */
 function TextileTile({ piece, onOpen }) {
@@ -32,6 +33,10 @@ function TextileTile({ piece, onOpen }) {
 }
 
 function TextileGallery() {
+  usePageMeta(
+    "Floral & Textile | Miuh Yang",
+    "Hand-sewn floral textile works by Miuh Yang, arranged in quilt-like grids. The ordinary made luminous."
+  );
   const viewer = useArtworkViewer();
   const open = (piece) =>
     viewer?.open({ src: piece.src, title: piece.title, subtitle: "Floral & Textile" });

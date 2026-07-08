@@ -1,4 +1,7 @@
+import { usePageMeta } from "../lib/usePageMeta";
+
 function PrivacyPolicy() {
+  usePageMeta("Privacy Policy | Miuh Yang", "Privacy policy for miuhyang.com.");
   return (
     <>
       <div className="mx-auto max-w-[800px] px-6 pb-24 pt-36 sm:px-10 sm:pt-44">
@@ -519,7 +522,7 @@ function PrivacyPolicy() {
             us:
           </p>
           <ul>
-            <li>By email:&nbsp;lonk752@gmail.com</li>
+            <li>By email:&nbsp;k0529ca@gmail.com</li>
           </ul>
         </div>
       </div>

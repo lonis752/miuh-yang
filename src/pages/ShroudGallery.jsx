@@ -3,6 +3,7 @@ import { Reveal } from "../components/motion/Reveal";
 import ScrollWords from "../components/motion/ScrollWords";
 import { ik, ikSrcSet } from "../lib/imagekit";
 import { shroudTitle, shroudText, shroudSections } from "../data/shroudPieces";
+import { usePageMeta } from "../lib/usePageMeta";
 
 /* eslint-disable-next-line react/prop-types */
 function ShroudTile({ src, section, onOpen }) {
@@ -28,6 +29,10 @@ function ShroudTile({ src, section, onOpen }) {
 }
 
 function ShroudGallery() {
+  usePageMeta(
+    "Shroud Work | Miuh Yang",
+    "Burial shroud textile work by Miuh Yang, made for her father. Mortality, departure, and love, held in cloth."
+  );
   const viewer = useArtworkViewer();
   const open = (src, section) =>
     viewer?.open({ src, title: section, subtitle: "Shroud Work" });

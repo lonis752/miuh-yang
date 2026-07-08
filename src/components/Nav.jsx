@@ -62,6 +62,8 @@ export default function Nav() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
           className="flex flex-col gap-[5px] p-2 md:hidden"
         >
           <span className={`h-px w-6 bg-ink transition-transform duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`} />
@@ -73,6 +75,7 @@ export default function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

@@ -53,11 +53,9 @@ export default function ChapterImage({
       alt={title}
       loading="lazy"
       decoding="async"
-      className={
-        contain
-          ? "h-full w-full object-contain drop-shadow-[0_22px_34px_rgba(23,19,16,0.30)]"
-          : "h-full w-full object-cover"
-      }
+      className={`h-full w-full ${contain ? "object-contain" : "object-cover"} ${
+        shadow ? "drop-shadow-[0_22px_34px_rgba(23,19,16,0.30)]" : ""
+      }`}
     />
   );
 

@@ -10,12 +10,12 @@ export default function StitchedText({ children, italic = false, className = "" 
 
   useEffect(() => {
     // measure after the web font settles so the outline width is right
+    let alive = true;
     let raf1, raf2;
     const measure = () => {
-      if (textRef.current) {
-        const b = textRef.current.getBBox();
-        if (b.width) setBox({ x: b.x, y: b.y, w: b.width, h: b.height });
-      }
+      if (!alive || !textRef.current) return;
+      const b = textRef.current.getBBox();
+      if (b.width) setBox({ x: b.x, y: b.y, w: b.width, h: b.height });
     };
     raf1 = requestAnimationFrame(() => {
       measure();
@@ -23,6 +23,7 @@ export default function StitchedText({ children, italic = false, className = "" 
     });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
     return () => {
+      alive = false;
       cancelAnimationFrame(raf1);
       cancelAnimationFrame(raf2);
     };
@@ -37,7 +38,13 @@ export default function StitchedText({ children, italic = false, className = "" 
   return (
     <motion.span
       className={`inline-block ${className}`}
-      style={{ height: "1em", width: `${widthEm}em`, verticalAlign: "-0.12em" }}
+      style={{
+        height: "1em",
+        width: `${widthEm}em`,
+        verticalAlign: "-0.12em",
+        opacity: box ? 1 : 0,
+        transition: "opacity 0.3s ease",
+      }}
       initial={{ clipPath: "inset(0 100% 0 0)" }}
       whileInView={{ clipPath: "inset(0 0% 0 0)" }}
       viewport={{ once: true, margin: "-10% 0px" }}

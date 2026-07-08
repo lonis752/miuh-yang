@@ -4,10 +4,15 @@ import Chapter, { ChapterLink } from "../components/home/Chapter";
 import ChapterImage from "../components/home/ChapterImage";
 import { homeChapters, homeImages } from "../data/homeChapters";
 import { ik } from "../lib/imagekit";
+import { usePageMeta } from "../lib/usePageMeta";
 
 const EASE = [0.16, 1, 0.3, 1];
 
 function Homepage() {
+  usePageMeta(
+    "Miuh Yang, Textile Artist",
+    "The textile work of Korean-Canadian artist Miuh Yang. Memory, loss, and the quiet poetics of everyday life."
+  );
   return (
     <div className="overflow-hidden">
       {/* HERO: a memorial garment turned on its side, feathered into the linen behind the text */}

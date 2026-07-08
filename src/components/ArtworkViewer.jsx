@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { ik } from "../lib/imagekit";
@@ -23,6 +23,7 @@ function CtrlButton({ onClick, label, children }) {
 // double-click to zoom, or use the +/- controls. Drag to pan. Escape to close.
 export function ArtworkViewerProvider({ children }) {
   const [item, setItem] = useState(null); // { src, title, subtitle } | null
+  const transformRef = useRef(null);
 
   const open = useCallback((payload) => setItem(payload), []);
   const close = useCallback(() => setItem(null), []);
@@ -51,7 +52,7 @@ export function ArtworkViewerProvider({ children }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center justify-between px-6 py-5 text-linen/90">
+            <div className="flex flex-none items-center justify-between px-6 py-5 text-linen/90">
               <div className="min-w-0">
                 <p className="font-display text-lg leading-tight text-linen">{item.title}</p>
                 {item.subtitle && (
@@ -69,58 +70,58 @@ export function ArtworkViewerProvider({ children }) {
               </button>
             </div>
 
-            <TransformWrapper
-              doubleClick={{ mode: "toggle", step: 1.6 }}
-              wheel={{ step: 0.18 }}
-              pinch={{ step: 5 }}
-              minScale={1}
-              maxScale={6}
-              centerOnInit
-            >
-              {({ zoomIn, zoomOut, resetTransform }) => (
-                <>
-                  <TransformComponent
-                    wrapperStyle={{ width: "100%", height: "100%", cursor: "grab" }}
-                    contentStyle={{
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <motion.img
-                      key={item.src}
-                      initial={{ scale: 0.98, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                      src={ik(item.src, { w: 2400, q: 82 })}
-                      alt={item.title}
-                      className="max-h-[80vh] max-w-[92vw] object-contain"
-                      draggable={false}
-                    />
-                  </TransformComponent>
+            <div className="relative min-h-0 flex-1">
+              <TransformWrapper
+                key={item.src}
+                ref={transformRef}
+                doubleClick={{ mode: "toggle", step: 1.6 }}
+                wheel={{ step: 0.18 }}
+                pinch={{ step: 5 }}
+                minScale={1}
+                maxScale={6}
+                centerOnInit
+              >
+                <TransformComponent
+                  wrapperStyle={{ width: "100%", height: "100%", cursor: "grab" }}
+                  contentStyle={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <motion.img
+                    key={item.src}
+                    initial={{ scale: 0.98, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    src={ik(item.src, { w: 2400, q: 82 })}
+                    alt={item.title}
+                    className="max-h-full max-w-[92vw] object-contain"
+                    draggable={false}
+                  />
+                </TransformComponent>
+              </TransformWrapper>
+            </div>
 
-                  <div className="flex items-center justify-center gap-4 pb-6 pt-2">
-                    <CtrlButton onClick={() => zoomOut()} label="Zoom out">
-                      &minus;
-                    </CtrlButton>
-                    <button
-                      onClick={() => resetTransform()}
-                      className="rounded-full border border-linen/30 px-4 py-2 text-[10px] uppercase tracking-eyebrow text-linen/70 transition-colors hover:border-linen/70 hover:text-linen"
-                    >
-                      Reset
-                    </button>
-                    <CtrlButton onClick={() => zoomIn()} label="Zoom in">
-                      +
-                    </CtrlButton>
-                    <span className="ml-3 hidden text-[10px] uppercase tracking-eyebrow text-linen/40 sm:inline">
-                      Scroll or double-click to zoom · drag to explore
-                    </span>
-                  </div>
-                </>
-              )}
-            </TransformWrapper>
+            <div className="flex flex-none items-center justify-center gap-4 py-5">
+              <CtrlButton onClick={() => transformRef.current?.zoomOut()} label="Zoom out">
+                &minus;
+              </CtrlButton>
+              <button
+                onClick={() => transformRef.current?.resetTransform()}
+                className="rounded-full border border-linen/30 px-4 py-2 text-[10px] uppercase tracking-eyebrow text-linen/70 transition-colors hover:border-linen/70 hover:text-linen"
+              >
+                Reset
+              </button>
+              <CtrlButton onClick={() => transformRef.current?.zoomIn()} label="Zoom in">
+                +
+              </CtrlButton>
+              <span className="ml-3 hidden text-[10px] uppercase tracking-eyebrow text-linen/40 sm:inline">
+                Scroll or double-click to zoom · drag to explore
+              </span>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

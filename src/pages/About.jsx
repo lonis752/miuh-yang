@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Reveal } from "../components/motion/Reveal";
 import ChapterImage from "../components/home/ChapterImage";
 import { ik } from "../lib/imagekit";
+import { usePageMeta } from "../lib/usePageMeta";
 
 const IK = "https://ik.imagekit.io/lonisk96/Miuh%20Yang";
 const EASE = [0.16, 1, 0.3, 1];
@@ -35,6 +36,10 @@ const exhibitions = [
 ];
 
 function About() {
+  usePageMeta(
+    "About | Miuh Yang",
+    "About Miuh Yang, a Korean-Canadian textile artist working in Vancouver, Canada."
+  );
   return (
     <div className="overflow-hidden">
       {/* header + portrait */}
