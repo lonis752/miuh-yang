@@ -16,7 +16,7 @@ function Footer() {
           <div>
             <p className="font-display text-3xl text-ink">Miuh Yang</p>
             <p className="mt-3 max-w-prose text-sm leading-relaxed text-muted">
-              A Korean-Canadian textile artist working in Vancouver — weaving
+              A Korean-Canadian textile artist working in Vancouver, weaving
               memory, loss, and the quiet poetics of everyday life.
             </p>
           </div>

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
 // Routes //
 import Homepage from './pages/Homepage.jsx';
+import Galleries from './pages/Galleries.jsx';
 import MemGallery from './pages/MemGallery.jsx';
 import MainLayout from './layouts/MainLayout.jsx';
 import ShroudGallery from './pages/ShroudGallery.jsx';
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage />,
+      },
+      {
+        path: "/galleries",
+        element: <Galleries />
       },
       {
         path: "/korean-war",

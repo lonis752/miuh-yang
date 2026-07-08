@@ -1,11 +1,8 @@
-import { SideMenu } from "../components/SideMenu";
-
 function PrivacyPolicy() {
   return (
     <>
-      <div className="flex justify-around gap-8">
-        <SideMenu />
-        <div className="mt-20 text-left max-w-lg flex flex-col gap-6">
+      <div className="mx-auto max-w-[800px] px-6 pb-24 pt-36 sm:px-10 sm:pt-44">
+        <div className="text-left flex flex-col gap-6 text-muted [&_h1]:font-display [&_h1]:text-4xl [&_h1]:text-ink [&_h2]:font-display [&_h2]:text-2xl [&_h2]:text-ink [&_h2]:mt-6 [&_h3]:font-display [&_h3]:text-xl [&_h3]:text-ink [&_a]:text-madder [&_a]:underline [&_p]:leading-relaxed">
           <div>
             <h1 className="text-2xl font-bold">Privacy Policy</h1>
             <p>Last updated: January 23, 2025</p>

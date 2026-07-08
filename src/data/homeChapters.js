@@ -6,11 +6,12 @@ export const homeChapters = [
     num: "02",
     kicker: "The Memorial",
     title: "3,227,082 Stitches",
+    countLabel: "Stitches",
     to: "/korean-war",
     image: `${IK}/banner1.png`,
     count: 3227082,
     story:
-      "Twenty-three nations sent their people to South Korea. For every one who served, a single stitch — 3,227,082 in all — sewn into a garment for each country. A work of gratitude, and of grief; a reminder that we are woven together, like threads in a garment, both strong and fragile.",
+      "Twenty-three nations sent their people to South Korea. For every one who served, a single stitch, 3,227,082 in all, sewn into a garment for each country. A work of gratitude and of grief, and a reminder that we are woven together like threads in a garment, both strong and fragile.",
   },
   {
     num: "03",
@@ -18,8 +19,9 @@ export const homeChapters = [
     title: "A Passage, in Cloth",
     to: "/shroud",
     image: `${IK}/20191026-LMH-4204.jpg`,
+    effect: "veil",
     story:
-      "A burial shroud made for her father. Here grief becomes something closer to love — mortality held not as an ending, but as a passage toward an enduring connection.",
+      "A burial shroud made for her father. Here grief becomes something closer to love. Mortality held not as an ending, but as a passage toward an enduring connection.",
   },
   {
     num: "04",
@@ -27,8 +29,9 @@ export const homeChapters = [
     title: "The Poetics of the Everyday",
     to: "/textile",
     image: `${IK}/banner3.png`,
+    effect: "stitch",
     story:
-      "Hand-sewn floral fragments arranged in quilt-like grids. The ordinary made luminous — the meditative act of stitching, and a search for harmony and balance in the texture of daily life.",
+      "Hand-sewn floral fragments arranged in quilt-like grids. The ordinary made luminous through the meditative act of stitching, a search for harmony and balance in the texture of daily life.",
   },
 ];
 

@@ -2,12 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
-const galleries = [
-  { to: "/korean-war", label: "3,227,082 Stitches" },
-  { to: "/shroud", label: "The Shroud" },
-  { to: "/textile", label: "Floral & Textile" },
-];
-const pages = [
+const menu = [
+  { to: "/galleries", label: "Galleries" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
@@ -45,16 +41,10 @@ export default function Nav() {
         </Link>
 
         {/* desktop */}
-        <div className="hidden items-center gap-8 lg:flex">
-          {galleries.map((g) => (
-            <NavLink key={g.to} to={g.to}>
-              {g.label}
-            </NavLink>
-          ))}
-          <span className="h-4 w-px bg-line" />
-          {pages.map((p) => (
-            <NavLink key={p.to} to={p.to}>
-              {p.label}
+        <div className="hidden items-center gap-9 md:flex">
+          {menu.map((m) => (
+            <NavLink key={m.to} to={m.to} active={pathname === m.to}>
+              {m.label}
             </NavLink>
           ))}
         </div>
@@ -63,23 +53,11 @@ export default function Nav() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
-          className="flex flex-col gap-[5px] p-2 lg:hidden"
+          className="flex flex-col gap-[5px] p-2 md:hidden"
         >
-          <span
-            className={`h-px w-6 bg-ink transition-transform duration-300 ${
-              open ? "translate-y-[6px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`h-px w-6 bg-ink transition-opacity duration-300 ${
-              open ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`h-px w-6 bg-ink transition-transform duration-300 ${
-              open ? "-translate-y-[6px] -rotate-45" : ""
-            }`}
-          />
+          <span className={`h-px w-6 bg-ink transition-transform duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`} />
+          <span className={`h-px w-6 bg-ink transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
+          <span className={`h-px w-6 bg-ink transition-transform duration-300 ${open ? "-translate-y-[6px] -rotate-45" : ""}`} />
         </button>
       </nav>
 
@@ -90,10 +68,10 @@ export default function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden lg:hidden"
+            className="overflow-hidden md:hidden"
           >
             <div className="flex flex-col gap-1 px-6 pb-8 pt-2">
-              {[...galleries, ...pages].map((item, i) => (
+              {menu.map((item, i) => (
                 <motion.div
                   key={item.to}
                   initial={{ opacity: 0, x: -12 }}
@@ -117,14 +95,18 @@ export default function Nav() {
 }
 
 /* eslint-disable-next-line react/prop-types */
-function NavLink({ to, children }) {
+function NavLink({ to, children, active }) {
   return (
     <Link
       to={to}
       className="group relative text-sm text-ink/80 transition-colors hover:text-ink"
     >
       {children}
-      <span className="absolute -bottom-1 left-0 h-px w-0 bg-madder transition-all duration-300 group-hover:w-full" />
+      <span
+        className={`absolute -bottom-1 left-0 h-px bg-madder transition-all duration-300 ${
+          active ? "w-full" : "w-0 group-hover:w-full"
+        }`}
+      />
     </Link>
   );
 }
