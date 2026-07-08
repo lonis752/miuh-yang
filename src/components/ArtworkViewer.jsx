@@ -7,8 +7,20 @@ import { ik } from "../lib/imagekit";
 const ViewerContext = createContext(null);
 export const useArtworkViewer = () => useContext(ViewerContext);
 
-// Full-screen viewer for studying artwork up close: scroll/pinch to zoom, drag to pan,
-// double-click to zoom in/out. Opened from anywhere via useArtworkViewer().open(...).
+function CtrlButton({ onClick, label, children }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={label}
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-linen/30 text-lg text-linen/80 transition-colors hover:border-linen/70 hover:text-linen"
+    >
+      {children}
+    </button>
+  );
+}
+
+// Full-screen viewer for studying artwork up close. Desktop-friendly: scroll to zoom,
+// double-click to zoom, or use the +/- controls. Drag to pan. Escape to close.
 export function ArtworkViewerProvider({ children }) {
   const [item, setItem] = useState(null); // { src, title, subtitle } | null
 
@@ -41,9 +53,7 @@ export function ArtworkViewerProvider({ children }) {
           >
             <div className="flex items-center justify-between px-6 py-5 text-linen/90">
               <div className="min-w-0">
-                <p className="font-display text-lg leading-tight text-linen">
-                  {item.title}
-                </p>
+                <p className="font-display text-lg leading-tight text-linen">{item.title}</p>
                 {item.subtitle && (
                   <p className="text-xs uppercase tracking-eyebrow text-linen/55">
                     {item.subtitle}
@@ -60,39 +70,57 @@ export function ArtworkViewerProvider({ children }) {
             </div>
 
             <TransformWrapper
-              doubleClick={{ mode: "toggle", step: 1.4 }}
-              wheel={{ step: 0.12 }}
+              doubleClick={{ mode: "toggle", step: 1.6 }}
+              wheel={{ step: 0.18 }}
               pinch={{ step: 5 }}
               minScale={1}
               maxScale={6}
               centerOnInit
             >
-              <TransformComponent
-                wrapperStyle={{ width: "100%", height: "100%", cursor: "grab" }}
-                contentStyle={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <motion.img
-                  key={item.src}
-                  initial={{ scale: 0.98, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  src={ik(item.src, { w: 2400, q: 82 })}
-                  alt={item.title}
-                  className="max-h-[82vh] max-w-[92vw] object-contain"
-                  draggable={false}
-                />
-              </TransformComponent>
-            </TransformWrapper>
+              {({ zoomIn, zoomOut, resetTransform }) => (
+                <>
+                  <TransformComponent
+                    wrapperStyle={{ width: "100%", height: "100%", cursor: "grab" }}
+                    contentStyle={{
+                      width: "100%",
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <motion.img
+                      key={item.src}
+                      initial={{ scale: 0.98, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                      src={ik(item.src, { w: 2400, q: 82 })}
+                      alt={item.title}
+                      className="max-h-[80vh] max-w-[92vw] object-contain"
+                      draggable={false}
+                    />
+                  </TransformComponent>
 
-            <p className="pointer-events-none px-6 pb-6 text-center text-xs uppercase tracking-eyebrow text-linen/45">
-              Scroll or pinch to zoom · drag to explore the detail
-            </p>
+                  <div className="flex items-center justify-center gap-4 pb-6 pt-2">
+                    <CtrlButton onClick={() => zoomOut()} label="Zoom out">
+                      &minus;
+                    </CtrlButton>
+                    <button
+                      onClick={() => resetTransform()}
+                      className="rounded-full border border-linen/30 px-4 py-2 text-[10px] uppercase tracking-eyebrow text-linen/70 transition-colors hover:border-linen/70 hover:text-linen"
+                    >
+                      Reset
+                    </button>
+                    <CtrlButton onClick={() => zoomIn()} label="Zoom in">
+                      +
+                    </CtrlButton>
+                    <span className="ml-3 hidden text-[10px] uppercase tracking-eyebrow text-linen/40 sm:inline">
+                      Scroll or double-click to zoom · drag to explore
+                    </span>
+                  </div>
+                </>
+              )}
+            </TransformWrapper>
           </motion.div>
         )}
       </AnimatePresence>

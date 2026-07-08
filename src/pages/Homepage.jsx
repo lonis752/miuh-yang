@@ -10,17 +10,20 @@ const EASE = [0.16, 1, 0.3, 1];
 function Homepage() {
   return (
     <div className="overflow-hidden">
-      {/* HERO */}
-      <section className="relative">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(120% 90% at 15% 0%, rgba(138,59,46,0.06) 0%, rgba(138,59,46,0) 45%)",
-          }}
+      {/* HERO: a memorial garment turned on its side, feathered into the linen behind the text */}
+      <section className="relative flex min-h-[88vh] items-center overflow-hidden">
+        <motion.img
+          src={ik(homeImages.hero, { w: 1600 })}
+          alt=""
+          aria-hidden="true"
+          initial={{ opacity: 0, scale: 1.06 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.8, ease: EASE }}
+          className="pointer-events-none absolute right-[-14%] top-[38%] w-[74%] max-w-[820px] -translate-y-1/2 rotate-90 object-contain [mask-image:radial-gradient(58%_58%_at_50%_50%,#000_50%,transparent_100%)] lg:right-[-4%]"
         />
-        <div className="mx-auto grid max-w-[1400px] gap-12 px-6 pb-16 pt-36 sm:px-10 sm:pt-44 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:pb-24 lg:pt-52">
-          <div>
+
+        <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-28 sm:px-10">
+          <div className="max-w-2xl">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -33,7 +36,7 @@ function Homepage() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, delay: 0.08, ease: EASE }}
-              className="mt-6 font-display text-5xl font-light leading-[1.02] text-ink sm:text-6xl md:text-7xl lg:text-[5.2rem]"
+              className="mt-6 font-display text-5xl font-light leading-[1.02] text-ink sm:text-6xl md:text-7xl lg:text-[5.4rem]"
             >
               Woven from memory,
               <br />
@@ -51,37 +54,20 @@ function Homepage() {
               for the fallen of the Korean War, to a shroud for her father, to the
               small, luminous grammar of flowers.
             </motion.p>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: EASE }}
-            className="relative aspect-[4/5] overflow-hidden rounded-[3px] bg-shade lg:aspect-[3/4] lg:mr-[-2rem] xl:mr-[-4rem]"
-          >
-            <img
-              src={ik(homeImages.hero, { w: 1300 })}
-              alt="A textile work by Miuh Yang"
-              className="h-full w-full object-contain object-center"
-            />
-          </motion.div>
-        </div>
-
-        <div className="mx-auto max-w-[1400px] px-6 sm:px-10">
-          <div className="flex items-center gap-4 border-t border-line py-6 text-xs uppercase tracking-eyebrow text-muted">
-            <span>Scroll to enter</span>
-            <motion.span
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.36, ease: EASE }}
+              className="mt-10"
             >
-              &darr;
-            </motion.span>
+              <ChapterLink to="/galleries">Enter the galleries</ChapterLink>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* 01 · THE ARTIST */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24 sm:px-10 sm:py-32">
+      <section className="mx-auto max-w-[1400px] border-t border-line px-6 py-24 sm:px-10 sm:py-32">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <RevealGroup className="flex flex-col justify-center">
             <RevealItem>

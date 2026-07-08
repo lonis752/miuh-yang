@@ -1,5 +1,6 @@
 import { useArtworkViewer } from "../components/ArtworkViewer";
 import { Reveal } from "../components/motion/Reveal";
+import ScrollWords from "../components/motion/ScrollWords";
 import { ik, ikSrcSet } from "../lib/imagekit";
 import { shroudTitle, shroudText, shroudSections } from "../data/shroudPieces";
 
@@ -9,7 +10,7 @@ function ShroudTile({ src, section, onOpen }) {
     <Reveal className="mb-5 break-inside-avoid">
       <button
         onClick={() => onOpen(src, section)}
-        className="group block w-full overflow-hidden rounded-[3px] bg-shade"
+        className="group block w-full overflow-hidden rounded-2xl bg-shade"
         aria-label={`View ${section} shroud detail`}
       >
         <img
@@ -39,29 +40,36 @@ function ShroudGallery() {
           {shroudTitle}
         </h1>
 
-        <div className="mt-14 max-w-prose space-y-8">
+        <div className="mt-16 max-w-2xl space-y-10">
           {shroudText.map((p, i) => (
-            <Reveal
+            <ScrollWords
               key={i}
-              as="p"
-              className="border-l-2 border-line pl-6 font-display text-lg italic leading-[1.9] text-ink/80"
-            >
-              {p}
-            </Reveal>
+              text={p}
+              className="font-display text-xl italic leading-[1.85] sm:text-2xl"
+            />
           ))}
         </div>
       </section>
 
-      <div className="mx-auto max-w-[1300px] px-6 pb-28 pt-24 sm:px-10">
-        {shroudSections.map((section) => (
-          <section key={section.title} className="mb-20">
-            <Reveal className="mb-10 flex items-baseline gap-4">
-              <span className="h-px w-10 bg-madder" />
-              <h2 className="font-display text-2xl text-ink sm:text-3xl">
-                {section.title}
-              </h2>
+      <div className="mx-auto max-w-[1300px] px-6 pb-28 pt-28 sm:px-10">
+        {shroudSections.map((section, i) => (
+          <section key={section.title} className="mb-24">
+            <Reveal className="mb-12 border-b border-line pb-6">
+              <div className="flex items-baseline gap-4">
+                <span className="font-display text-2xl text-madder">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <p className="text-xs uppercase tracking-eyebrow text-muted">
+                    A shroud for
+                  </p>
+                  <h2 className="mt-1 font-display text-3xl text-ink sm:text-4xl">
+                    {section.title}
+                  </h2>
+                </div>
+              </div>
             </Reveal>
-            <div className="columns-2 gap-5 md:columns-3">
+            <div className="columns-2 gap-6 md:columns-3">
               {section.images.map((src) => (
                 <ShroudTile
                   key={src}

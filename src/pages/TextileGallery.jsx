@@ -10,7 +10,7 @@ function TextileTile({ piece, onOpen }) {
       <figure className="group">
         <button
           onClick={() => onOpen(piece)}
-          className="block aspect-square w-full overflow-hidden rounded-[3px] border border-line bg-paper"
+          className="block aspect-square w-full overflow-hidden rounded-2xl border border-line bg-paper"
           aria-label={`View ${piece.title}`}
         >
           <img
@@ -60,9 +60,6 @@ function TextileGallery() {
             </Reveal>
           ))}
         </div>
-
-        {/* running-stitch divider */}
-        <div className="mx-auto mt-16 h-px w-40 border-t-2 border-dashed border-madder/50" />
       </section>
 
       <div className="mx-auto max-w-[1300px] px-6 pb-28 pt-16 sm:px-10">

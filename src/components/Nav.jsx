@@ -31,12 +31,21 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 sm:px-10">
-        <Link to="/" className="group flex flex-col leading-none">
-          <span className="font-display text-xl tracking-tight text-ink sm:text-2xl">
-            Miuh Yang
-          </span>
-          <span className="text-[10px] uppercase tracking-eyebrow text-muted">
-            Textile Artist
+        <Link to="/" className="group flex items-center gap-3">
+          <img
+            src="https://ik.imagekit.io/lonisk96/Miuh%20Yang/favicon-removebg-preview.png?tr=w-96,f-auto"
+            alt=""
+            width={40}
+            height={40}
+            className="h-9 w-9 object-contain sm:h-10 sm:w-10"
+          />
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-xl tracking-tight text-ink sm:text-2xl">
+              Miuh Yang
+            </span>
+            <span className="text-[10px] uppercase tracking-eyebrow text-muted">
+              Textile Artist
+            </span>
           </span>
         </Link>
 

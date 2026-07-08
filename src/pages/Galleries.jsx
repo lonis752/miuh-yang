@@ -39,7 +39,11 @@ function Galleries() {
       <div className="mt-8 border-t border-line">
         {homeChapters.map((chapter, i) => (
           <div key={chapter.to} className={i > 0 ? "border-t border-line" : ""}>
-            <Chapter chapter={chapter} flip={i % 2 === 1} />
+            <Chapter
+              chapter={chapter}
+              flip={i % 2 === 1}
+              num={String(i + 1).padStart(2, "0")}
+            />
           </div>
         ))}
       </div>

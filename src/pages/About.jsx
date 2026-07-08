@@ -63,6 +63,7 @@ function About() {
             src={`${IK}/artist.jpg?updatedAt=1737663368820`}
             title="Miuh Yang"
             subtitle="Portrait"
+            radiusClass="rounded-t-[8rem] rounded-b-2xl"
             className="aspect-[3/4] w-full max-w-sm"
           />
         </div>
@@ -113,12 +114,15 @@ function About() {
               Selected Exhibitions
             </h2>
           </Reveal>
-          <dl className="mt-12 divide-y divide-line">
+          <dl className="mt-12 border-l border-line pl-6 sm:pl-10">
             {exhibitions.map(([year, desc], i) => (
               <Reveal key={i}>
-                <div className="grid grid-cols-[5rem_1fr] gap-6 py-4 sm:grid-cols-[8rem_1fr]">
-                  <dt className="font-display text-madder">{year}</dt>
-                  <dd className="text-[15px] leading-relaxed text-ink/85">{desc}</dd>
+                <div className="group relative grid grid-cols-[4.5rem_1fr] gap-5 py-5 transition-colors sm:grid-cols-[7rem_1fr]">
+                  <span className="absolute -left-[1.6rem] top-7 h-2 w-2 rounded-full bg-line transition-colors duration-300 group-hover:bg-madder sm:-left-[2.6rem]" />
+                  <dt className="font-display text-lg text-madder">{year}</dt>
+                  <dd className="text-[15px] leading-relaxed text-ink/85 transition-transform duration-300 group-hover:translate-x-1">
+                    {desc}
+                  </dd>
                 </div>
               </Reveal>
             ))}
