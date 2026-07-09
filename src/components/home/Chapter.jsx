@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../motion/Reveal";
 import ScrollWords from "../motion/ScrollWords";
-import StitchedText from "../motion/StitchedText";
+import StitchInText from "../motion/StitchInText";
 import ChapterImage from "./ChapterImage";
 import Counter from "./Counter";
 
@@ -38,7 +38,7 @@ function Title({ chapter }) {
     return (
       <>
         {before}
-        <StitchedText>{chapter.stitchWord}</StitchedText>
+        <StitchInText label={chapter.stitchWord} />
         {after}
       </>
     );
