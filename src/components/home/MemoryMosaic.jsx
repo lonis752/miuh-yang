@@ -34,12 +34,15 @@ const randInt = (n) => Math.floor(Math.random() * n);
 
 function makeCrop(srcIndex) {
   return {
+    // Crop deep into the centre of each piece (33-67%) at high zoom so we land on fabric
+    // and stitch detail, never the white photo background at the edges. Higher-res source
+    // keeps the deep crops sharp.
     key: ++uid,
-    src: ik(SOURCES[srcIndex], { w: 380, q: 64 }),
+    src: ik(SOURCES[srcIndex], { w: 720, q: 68 }),
     srcIndex,
-    x: 20 + randInt(60),
-    y: 20 + randInt(60),
-    zoom: 235 + randInt(130),
+    x: 33 + randInt(34),
+    y: 33 + randInt(34),
+    zoom: 330 + randInt(160),
   };
 }
 
