@@ -33,7 +33,7 @@ export const homeChapters = [
     num: "04",
     kicker: "Floral & Textile",
     title: "The Poetics of the Everyday",
-    stitchWord: "Everyday",
+    stitchUnderline: true,
     to: "/textile",
     image: `${IK}/banner3.png`,
     fit: "contain",

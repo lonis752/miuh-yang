@@ -15,7 +15,6 @@ function MemGalleryComp() {
       src: piece[side],
       title: piece.country,
       subtitle: `${side === "front" ? "Front" : "Back"} · ${piece.stitches} stitches`,
-      rotate: 90,
     });
 
   return (

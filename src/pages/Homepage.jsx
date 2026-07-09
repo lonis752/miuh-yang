@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Reveal, RevealGroup, RevealItem } from "../components/motion/Reveal";
 import Chapter, { ChapterLink } from "../components/home/Chapter";
 import ChapterImage from "../components/home/ChapterImage";
+import MemoryMosaic from "../components/home/MemoryMosaic";
 import { homeChapters, homeImages } from "../data/homeChapters";
-import { ik } from "../lib/imagekit";
 import { usePageMeta } from "../lib/usePageMeta";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -15,19 +15,19 @@ function Homepage() {
   );
   return (
     <div className="overflow-hidden">
-      {/* HERO: a memorial garment turned on its side, feathered into the linen behind the text */}
-      <section className="relative flex min-h-[88vh] items-center overflow-hidden">
-        <motion.img
-          src={ik(homeImages.hero, { w: 1600 })}
-          alt=""
-          aria-hidden="true"
-          initial={{ opacity: 0, scale: 1.06 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.8, ease: EASE }}
-          className="pointer-events-none absolute right-[-14%] top-[18%] w-[74%] max-w-[820px] -translate-y-1/2 rotate-90 object-contain [mask-image:radial-gradient(58%_58%_at_50%_50%,#000_50%,transparent_100%)] lg:right-[-4%]"
+      {/* HERO: a living-gallery mosaic of memorial artwork crops behind the text */}
+      <section className="relative h-screen w-full overflow-hidden">
+        <div className="absolute inset-0">
+          <MemoryMosaic />
+        </div>
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(244,239,231,0.96) 0%, rgba(244,239,231,0.9) 26%, rgba(244,239,231,0.55) 52%, rgba(244,239,231,0.12) 78%, rgba(244,239,231,0) 100%)",
+          }}
         />
-
-        <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-28 sm:px-10">
+        <div className="relative z-10 mx-auto flex h-full max-w-[1400px] items-center px-6 pt-20 sm:px-10">
           <div className="max-w-2xl">
             <motion.p
               initial={{ opacity: 0, y: 16 }}

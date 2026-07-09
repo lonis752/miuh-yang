@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../motion/Reveal";
 import ScrollWords from "../motion/ScrollWords";
-import StitchInText from "../motion/StitchInText";
+import StitchedUnderline from "../motion/StitchedUnderline";
 import ChapterImage from "./ChapterImage";
 import Counter from "./Counter";
 
@@ -30,16 +30,6 @@ function Title({ chapter }) {
       <>
         <Counter to={chapter.count} className="tabular-nums" />{" "}
         <span>{chapter.countLabel}</span>
-      </>
-    );
-  }
-  if (chapter.stitchWord && chapter.title.includes(chapter.stitchWord)) {
-    const [before, after] = chapter.title.split(chapter.stitchWord);
-    return (
-      <>
-        {before}
-        <StitchInText label={chapter.stitchWord} />
-        {after}
       </>
     );
   }
@@ -78,6 +68,11 @@ export default function Chapter({ chapter, flip, num }) {
             <h2 className="mt-5 font-display text-4xl leading-[1.05] text-ink sm:text-5xl md:text-6xl">
               <Title chapter={chapter} />
             </h2>
+            {chapter.stitchUnderline && (
+              <div className="mt-4 w-48 sm:w-64">
+                <StitchedUnderline />
+              </div>
+            )}
 
             {chapter.scrollWords ? (
               <ScrollWords
