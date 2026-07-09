@@ -22,7 +22,7 @@ export const homeChapters = [
     title: "A Passage, in Cloth",
     to: "/shroud",
     image: `${IK}/Shrouds/20191026-LMH-4076.jpg?updatedAt=1738387558313`,
-    layout: "bleed",
+    layout: "feature",
     scrollWords: true,
     story:
       "A burial shroud made for her father. Here grief becomes something closer to love. Mortality held not as an ending, but as a passage toward an enduring connection.",

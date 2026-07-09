@@ -40,34 +40,15 @@ function Title({ chapter }) {
   return chapter.title;
 }
 
-// Full-bleed variant: the image runs to the right edge of the screen and fades into the linen
-// on the left, with the text sitting over the blended area.
-function BleedChapter({ chapter, num }) {
+// Faded feature: a modestly-sized image beside the text whose edges dissolve into the linen
+// on all sides. Kept small so low-resolution sources stay sharp.
+const EDGE_FADE =
+  "radial-gradient(ellipse 82% 84% at 50% 50%, #000 44%, rgba(0,0,0,0) 100%)";
+
+function FeatureChapter({ chapter, num }) {
   return (
-    <section className="relative w-full overflow-hidden">
-      <motion.div
-        className="absolute inset-0"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-15% 0px" }}
-        transition={{ duration: 1.4, ease: EASE }}
-      >
-        <img
-          src={ik(chapter.image, { w: 2000 })}
-          alt={chapter.title}
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover"
-        />
-      </motion.div>
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(100deg, rgba(244,239,231,1) 0%, rgba(244,239,231,0.97) 30%, rgba(244,239,231,0.62) 50%, rgba(244,239,231,0.16) 73%, rgba(244,239,231,0) 100%)",
-        }}
-      />
-      <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-[1400px] items-center px-6 py-24 sm:px-10">
+    <section className="w-full overflow-hidden">
+      <div className="mx-auto grid min-h-[62vh] max-w-[1400px] items-center gap-10 px-6 py-24 sm:px-10 lg:grid-cols-2 lg:gap-16">
         <div className="max-w-xl">
           <Reveal>
             <div className="flex items-baseline gap-4">
@@ -92,13 +73,30 @@ function BleedChapter({ chapter, num }) {
             </div>
           </Reveal>
         </div>
+
+        <motion.div
+          className="justify-self-center lg:justify-self-end"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-15% 0px" }}
+          transition={{ duration: 1.3, ease: EASE }}
+        >
+          <img
+            src={ik(chapter.image, { w: 800 })}
+            alt={chapter.title}
+            loading="lazy"
+            decoding="async"
+            className="w-full max-w-[600px] object-contain"
+            style={{ maskImage: EDGE_FADE, WebkitMaskImage: EDGE_FADE }}
+          />
+        </motion.div>
       </div>
     </section>
   );
 }
 
 export default function Chapter({ chapter, flip, num }) {
-  if (chapter.layout === "bleed") return <BleedChapter chapter={chapter} num={num} />;
+  if (chapter.layout === "feature") return <FeatureChapter chapter={chapter} num={num} />;
   return (
     <section className="mx-auto max-w-[1400px] px-6 py-24 sm:px-10 sm:py-32">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
