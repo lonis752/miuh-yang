@@ -24,7 +24,7 @@ function Homepage() {
           initial={{ opacity: 0, scale: 1.06 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.8, ease: EASE }}
-          className="pointer-events-none absolute right-[-14%] top-[28%] w-[74%] max-w-[820px] -translate-y-1/2 rotate-90 object-contain [mask-image:radial-gradient(58%_58%_at_50%_50%,#000_50%,transparent_100%)] lg:right-[-4%]"
+          className="pointer-events-none absolute right-[-14%] top-[18%] w-[74%] max-w-[820px] -translate-y-1/2 rotate-90 object-contain [mask-image:radial-gradient(58%_58%_at_50%_50%,#000_50%,transparent_100%)] lg:right-[-4%]"
         />
 
         <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-28 sm:px-10">

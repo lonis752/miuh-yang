@@ -71,18 +71,9 @@ function Contact() {
           Every thread carries a story worth keeping.
         </motion.h1>
         <p className="mt-8 max-w-prose text-[15px] leading-[1.9] text-muted">
-          For commissions, exhibitions, or a note about the work, please reach out.
+          For commissions, exhibitions, or a note about the work, please use the form.
+          Miuh reads every message.
         </p>
-        <a
-          href={`mailto:${EMAIL}`}
-          className="group mt-4 inline-block font-display text-xl text-ink sm:text-2xl"
-        >
-          <span className="relative">
-            {EMAIL}
-            <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 bg-ink/30 transition-transform duration-500 group-hover:scale-x-0" />
-            <span className="absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-madder transition-transform duration-500 group-hover:scale-x-100" />
-          </span>
-        </a>
       </div>
 
       <motion.div

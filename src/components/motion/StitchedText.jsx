@@ -2,14 +2,13 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-// Renders a word as outlined letters with a dashed (stitched) madder stroke that reveals
-// left to right, as if it is being sewn. Sizes itself to the surrounding font.
+// Renders a word as its letter OUTLINES in distinct madder stitches (no fill), sewn in
+// left-to-right and slowly so you can watch each stitch appear. Sizes to the surrounding font.
 export default function StitchedText({ children, italic = false, className = "" }) {
   const textRef = useRef(null);
   const [box, setBox] = useState(null);
 
   useEffect(() => {
-    // measure after the web font settles so the outline width is right
     let alive = true;
     let raf1, raf2;
     const measure = () => {
@@ -29,10 +28,10 @@ export default function StitchedText({ children, italic = false, className = "" 
     };
   }, [children]);
 
-  const pad = 6;
+  const pad = 8;
   const vb = box
     ? `${box.x - pad} ${box.y - pad} ${box.w + pad * 2} ${box.h + pad * 2}`
-    : "0 0 320 90";
+    : "0 0 320 96";
   const widthEm = box ? (box.w + pad * 2) / (box.h + pad * 2) : 4.2;
 
   return (
@@ -42,13 +41,12 @@ export default function StitchedText({ children, italic = false, className = "" 
         height: "1em",
         width: `${widthEm}em`,
         verticalAlign: "-0.12em",
-        opacity: box ? 1 : 0,
-        transition: "opacity 0.3s ease",
+        visibility: box ? "visible" : "hidden",
       }}
       initial={{ clipPath: "inset(0 100% 0 0)" }}
       whileInView={{ clipPath: "inset(0 0% 0 0)" }}
       viewport={{ once: true, margin: "-10% 0px" }}
-      transition={{ duration: 3.6, ease: "linear", delay: 0.35 }}
+      transition={{ duration: 3.8, ease: "linear", delay: 0.35 }}
     >
       <svg
         className="h-full w-full overflow-visible"
@@ -65,10 +63,10 @@ export default function StitchedText({ children, italic = false, className = "" 
           fontSize="80"
           fontWeight="400"
           fontStyle={italic ? "italic" : "normal"}
-          fill="rgba(23,19,16,0.07)"
+          fill="none"
           stroke="#8A3B2E"
-          strokeWidth="1.7"
-          strokeDasharray="4 3"
+          strokeWidth="2.2"
+          strokeDasharray="6 7"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
