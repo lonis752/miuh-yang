@@ -94,7 +94,7 @@ function About() {
 
       {/* two artworks */}
       <section className="mx-auto max-w-[1400px] px-6 pb-24 sm:px-10">
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-[820px] gap-6 sm:grid-cols-2">
           <ChapterImage
             src={`${IK}/about1.jpg`}
             title="Shroud work"
@@ -122,10 +122,10 @@ function About() {
           <dl className="mt-12 border-l border-line pl-6 sm:pl-10">
             {exhibitions.map(([year, desc], i) => (
               <Reveal key={i}>
-                <div className="group relative grid grid-cols-[4.5rem_1fr] gap-5 py-5 transition-colors sm:grid-cols-[7rem_1fr]">
+                <div className="group relative grid grid-cols-[4.5rem_1fr] gap-5 py-5 transition-transform duration-300 ease-out hover:-translate-y-1 sm:grid-cols-[7rem_1fr]">
                   <span className="absolute -left-[1.6rem] top-7 h-2 w-2 rounded-full bg-line transition-colors duration-300 group-hover:bg-madder sm:-left-[2.6rem]" />
                   <dt className="font-display text-lg text-madder">{year}</dt>
-                  <dd className="text-[15px] leading-relaxed text-ink/85 transition-transform duration-300 group-hover:translate-x-1">
+                  <dd className="text-[15px] leading-relaxed text-ink/80 transition-colors duration-300 group-hover:font-medium group-hover:text-ink">
                     {desc}
                   </dd>
                 </div>

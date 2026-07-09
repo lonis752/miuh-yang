@@ -24,11 +24,11 @@ function Homepage() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(100deg, rgba(244,239,231,0.96) 0%, rgba(244,239,231,0.9) 26%, rgba(244,239,231,0.55) 52%, rgba(244,239,231,0.12) 78%, rgba(244,239,231,0) 100%)",
+              "linear-gradient(100deg, rgba(244,239,231,0.97) 0%, rgba(244,239,231,0.93) 36%, rgba(244,239,231,0.74) 56%, rgba(244,239,231,0.4) 75%, rgba(244,239,231,0.1) 91%, rgba(244,239,231,0) 100%)",
           }}
         />
         <div className="relative z-10 mx-auto flex h-full max-w-[1400px] items-center px-6 pt-20 sm:px-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl lg:ml-[10%] xl:ml-[15%]">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}

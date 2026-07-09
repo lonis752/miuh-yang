@@ -11,7 +11,7 @@ function TextileTile({ piece, onOpen }) {
       <figure className="group">
         <button
           onClick={() => onOpen(piece)}
-          className="block aspect-square w-full overflow-hidden rounded-2xl border border-line bg-paper"
+          className="block aspect-square w-full"
           aria-label={`View ${piece.title}`}
         >
           <img
@@ -21,7 +21,7 @@ function TextileTile({ piece, onOpen }) {
             alt={piece.title}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-contain p-5 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+            className="h-full w-full object-contain p-4 drop-shadow-[0_14px_22px_rgba(23,19,16,0.22)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
           />
         </button>
         <figcaption className="mt-3 text-center font-display text-lg text-ink">

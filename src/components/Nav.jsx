@@ -9,27 +9,14 @@ const menu = [
 ];
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-500 ${
-        scrolled || open
-          ? "bg-linen/85 backdrop-blur-md border-b border-line"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-linen">
+
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 sm:px-10">
         <Link to="/" className="group flex items-center gap-3">
           <img

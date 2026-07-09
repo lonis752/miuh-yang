@@ -11,6 +11,7 @@ export const shroudText = [
 export const shroudSections = [
   {
     title: "To My Father",
+    video: `${IK}/Shrouds/to%20Father.mp4?updatedAt=1738394303544`,
     images: [
       `${IK}/Shrouds/20190902-LMH-1987.jpg?updatedAt=1738387544640`,
       `${IK}/Shrouds/20190902-LMH-1988.jpg?updatedAt=1738387541838`,
@@ -21,6 +22,8 @@ export const shroudSections = [
   },
   {
     title: "Ryu Gwan-Sun",
+    videoLong: `${IK}/Shrouds/Ryu%20long.mp4?updatedAt=1738394305742`,
+    videoShort: `${IK}/Shrouds/Ryu%20short.mp4?updatedAt=1738394305462`,
     images: [
       `${IK}/Shrouds/20190902-LMH-2017.jpg?updatedAt=1738387544668`,
       `${IK}/Shrouds/20190902-LMH-2011.jpg?updatedAt=1738387547454`,

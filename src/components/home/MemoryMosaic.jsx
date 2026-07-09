@@ -37,9 +37,9 @@ function makeCrop(srcIndex) {
     key: ++uid,
     src: ik(SOURCES[srcIndex], { w: 380, q: 64 }),
     srcIndex,
-    x: 8 + randInt(84),
-    y: 8 + randInt(84),
-    zoom: 150 + randInt(95),
+    x: 20 + randInt(60),
+    y: 20 + randInt(60),
+    zoom: 235 + randInt(130),
   };
 }
 
@@ -93,11 +93,11 @@ export default function MemoryMosaic({ className = "" }) {
     const tick = () => {
       if (stopped) return;
       swapOne();
-      if (Math.random() < 0.18) swapOne(); // occasionally two at once
-      timer = setTimeout(tick, 1000 + Math.random() * 2000);
+      if (Math.random() < 0.1) swapOne(); // occasionally two at once
+      timer = setTimeout(tick, 1600 + Math.random() * 2600);
     };
 
-    timer = setTimeout(tick, 1300);
+    timer = setTimeout(tick, 1600);
     return () => {
       stopped = true;
       clearTimeout(timer);
@@ -126,10 +126,10 @@ export default function MemoryMosaic({ className = "" }) {
                 backgroundSize: `${crop.zoom}%`,
                 backgroundPosition: `${crop.x}% ${crop.y}%`,
               }}
-              initial={{ opacity: 0, scale: 1.03 }}
+              initial={{ opacity: 0, scale: 1.02 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 2.4, ease: [0.4, 0, 0.2, 1] }}
             />
           </AnimatePresence>
         </div>

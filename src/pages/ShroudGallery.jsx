@@ -44,6 +44,46 @@ function ShroudTile({ src, section, badge, onOpen }) {
   );
 }
 
+/* eslint-disable-next-line react/prop-types */
+function SectionVideo({ video, videoLong, videoShort }) {
+  const [mode, setMode] = useState("long");
+  const src = video || (mode === "long" ? videoLong : videoShort);
+  if (!src) return null;
+  const hasToggle = Boolean(videoLong || videoShort);
+  return (
+    <div className="mx-auto mb-14 max-w-[1000px]">
+      {hasToggle && (
+        <div className="mb-4 flex items-center gap-2">
+          <span className="mr-2 text-xs uppercase tracking-eyebrow text-muted">
+            Version
+          </span>
+          {["long", "short"].map((m) => (
+            <button
+              key={m}
+              onClick={() => setMode(m)}
+              className={`rounded-full px-4 py-1.5 text-[10px] uppercase tracking-eyebrow transition-colors ${
+                mode === m
+                  ? "bg-madder text-linen"
+                  : "border border-line text-muted hover:border-madder hover:text-madder"
+              }`}
+            >
+              {m}
+            </button>
+          ))}
+        </div>
+      )}
+      <video
+        key={src}
+        src={src}
+        controls
+        playsInline
+        preload="metadata"
+        className="w-full rounded-2xl bg-shade shadow-md"
+      />
+    </div>
+  );
+}
+
 function ShroudGallery() {
   usePageMeta(
     "Shroud Work | Miuh Yang",
@@ -103,6 +143,12 @@ function ShroudGallery() {
                   </div>
                 </div>
               </Reveal>
+
+              <SectionVideo
+                video={section.video}
+                videoLong={section.videoLong}
+                videoShort={section.videoShort}
+              />
 
               <div className="flex gap-5 sm:gap-6">
                 {columns.map((col, ci) => (
