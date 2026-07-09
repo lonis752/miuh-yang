@@ -31,6 +31,7 @@ export default function ChapterImage({
   linkTo,
   fit = "cover",
   shadow = false,
+  rotate,
   hoverLabel,
   radiusClass = "rounded-2xl",
   className = "",
@@ -47,8 +48,8 @@ export default function ChapterImage({
   const img = (
     <motion.img
       style={{ y, scale: contain ? 1 : 1.16 }}
-      src={ik(src, { w: 1300 })}
-      srcSet={ikSrcSet(src, [600, 1000, 1400])}
+      src={ik(src, { w: 1300, rotate })}
+      srcSet={ikSrcSet(src, [600, 1000, 1400], { rotate })}
       sizes="(min-width: 1024px) 50vw, 92vw"
       alt={title}
       loading="lazy"

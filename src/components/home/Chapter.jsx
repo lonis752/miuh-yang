@@ -58,6 +58,7 @@ export default function Chapter({ chapter, flip, num }) {
             effect={chapter.effect}
             fit={chapter.fit}
             shadow={chapter.shadow}
+            rotate={chapter.rotate}
             linkTo={chapter.to}
             className="aspect-[4/5] w-full"
           />

@@ -20,8 +20,8 @@ function PieceImage({ piece, side, onOpen }) {
         decoding="async"
         alt={label}
         className="h-auto w-full rounded-xl object-contain drop-shadow-[0_20px_32px_rgba(23,19,16,0.28)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/img:scale-[1.02]"
-        src={ik(src, { w: 900 })}
-        srcSet={ikSrcSet(src)}
+        src={ik(src, { w: 900, rotate: 90 })}
+        srcSet={ikSrcSet(src, [400, 800, 1200], { rotate: 90 })}
         sizes="(min-width: 640px) 40vw, 45vw"
       />
     </button>

@@ -11,6 +11,7 @@ export const homeChapters = [
     image: `${IK}/banner1.png`,
     fit: "contain",
     shadow: true,
+    rotate: 90,
     count: 3227082,
     story:
       "Twenty-three nations sent their people to South Korea. For every one who served, a single stitch, 3,227,082 in all, sewn into a garment for each country. A work of gratitude and of grief, and a reminder that we are woven together like threads in a garment, both strong and fragile.",

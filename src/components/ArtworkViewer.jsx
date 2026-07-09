@@ -96,7 +96,7 @@ export function ArtworkViewerProvider({ children }) {
                     initial={{ scale: 0.98, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    src={ik(item.src, { w: 2400, q: 82 })}
+                    src={ik(item.src, { w: 2400, q: 82, rotate: item.rotate })}
                     alt={item.title}
                     className="max-h-full max-w-[92vw] object-contain"
                     draggable={false}

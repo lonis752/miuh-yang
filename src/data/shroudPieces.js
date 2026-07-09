@@ -17,13 +17,13 @@ export const shroudSections = [
       `${IK}/Shrouds/20190906-LMH-2160.jpg?updatedAt=1738387547405`,
       `${IK}/Shrouds/20190906-LMH-2153.jpg?updatedAt=1738387547562`,
       `${IK}/Shrouds/20190906-LMH-2155.jpg?updatedAt=1738387544704`,
-      `${IK}/Shrouds/20190902-LMH-2017.jpg?updatedAt=1738387544668`,
-      `${IK}/Shrouds/20190902-LMH-2011.jpg?updatedAt=1738387547454`,
     ],
   },
   {
     title: "Ryu Gwan-Sun",
     images: [
+      `${IK}/Shrouds/20190902-LMH-2017.jpg?updatedAt=1738387544668`,
+      `${IK}/Shrouds/20190902-LMH-2011.jpg?updatedAt=1738387547454`,
       `${IK}/Shrouds/20190902-LMH-1997.jpg?updatedAt=1738387541514`,
       `${IK}/Shrouds/20190902-LMH-1990.jpg?updatedAt=1738387541504`,
       `${IK}/Shrouds/20190906-LMH-2129.jpg?updatedAt=1738387547556`,
