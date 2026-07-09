@@ -21,10 +21,8 @@ export const homeChapters = [
     kicker: "The Shroud",
     title: "A Passage, in Cloth",
     to: "/shroud",
-    image: `${IK}/Shrouds/20190902-LMH-1990-Photoroom.png`,
-    fit: "contain",
-    shadow: true,
-    effect: "veil",
+    image: `${IK}/Shrouds/20191026-LMH-4076.jpg?updatedAt=1738387558313`,
+    layout: "bleed",
     scrollWords: true,
     story:
       "A burial shroud made for her father. Here grief becomes something closer to love. Mortality held not as an ending, but as a passage toward an enduring connection.",

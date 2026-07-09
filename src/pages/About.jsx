@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Reveal } from "../components/motion/Reveal";
 import ChapterImage from "../components/home/ChapterImage";
+import { ChapterLink } from "../components/home/Chapter";
 import { ik } from "../lib/imagekit";
 import { usePageMeta } from "../lib/usePageMeta";
 
@@ -132,6 +133,20 @@ function About() {
               </Reveal>
             ))}
           </dl>
+        </div>
+      </section>
+
+      {/* CTA to contact */}
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 text-center sm:px-10 sm:py-28">
+          <Reveal>
+            <h2 className="mx-auto max-w-2xl font-display text-3xl leading-[1.12] text-ink sm:text-4xl md:text-5xl">
+              Interested in the work?
+            </h2>
+            <div className="mt-8 flex justify-center">
+              <ChapterLink to="/contact">Get in touch</ChapterLink>
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>

@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Reveal } from "../motion/Reveal";
 import ScrollWords from "../motion/ScrollWords";
 import StitchedUnderline from "../motion/StitchedUnderline";
 import ChapterImage from "./ChapterImage";
 import Counter from "./Counter";
+import { ik } from "../../lib/imagekit";
+
+const EASE = [0.16, 1, 0.3, 1];
 
 export function ChapterLink({ to, children }) {
   return (
@@ -36,7 +40,65 @@ function Title({ chapter }) {
   return chapter.title;
 }
 
+// Full-bleed variant: the image runs to the right edge of the screen and fades into the linen
+// on the left, with the text sitting over the blended area.
+function BleedChapter({ chapter, num }) {
+  return (
+    <section className="relative w-full overflow-hidden">
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-15% 0px" }}
+        transition={{ duration: 1.4, ease: EASE }}
+      >
+        <img
+          src={ik(chapter.image, { w: 2000 })}
+          alt={chapter.title}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+      </motion.div>
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(100deg, rgba(244,239,231,1) 0%, rgba(244,239,231,0.97) 30%, rgba(244,239,231,0.62) 50%, rgba(244,239,231,0.16) 73%, rgba(244,239,231,0) 100%)",
+        }}
+      />
+      <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-[1400px] items-center px-6 py-24 sm:px-10">
+        <div className="max-w-xl">
+          <Reveal>
+            <div className="flex items-baseline gap-4">
+              <span className="font-display text-2xl text-madder">{num || chapter.num}</span>
+              <span className="text-xs uppercase tracking-eyebrow text-muted">
+                {chapter.kicker}
+              </span>
+            </div>
+            <h2 className="mt-5 font-display text-4xl leading-[1.05] text-ink sm:text-5xl md:text-6xl">
+              {chapter.title}
+            </h2>
+            {chapter.scrollWords ? (
+              <ScrollWords
+                text={chapter.story}
+                className="mt-6 max-w-md text-[15px] leading-[1.9]"
+              />
+            ) : (
+              <p className="mt-6 max-w-md text-[15px] leading-[1.9] text-muted">{chapter.story}</p>
+            )}
+            <div className="mt-9">
+              <ChapterLink to={chapter.to}>Enter the collection</ChapterLink>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Chapter({ chapter, flip, num }) {
+  if (chapter.layout === "bleed") return <BleedChapter chapter={chapter} num={num} />;
   return (
     <section className="mx-auto max-w-[1400px] px-6 py-24 sm:px-10 sm:py-32">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -49,6 +111,7 @@ export default function Chapter({ chapter, flip, num }) {
             fit={chapter.fit}
             shadow={chapter.shadow}
             rotate={chapter.rotate}
+            radiusClass={chapter.radiusClass}
             linkTo={chapter.to}
             className="aspect-[4/5] w-full"
           />

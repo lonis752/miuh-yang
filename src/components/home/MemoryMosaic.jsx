@@ -40,9 +40,9 @@ function makeCrop(srcIndex) {
     key: ++uid,
     src: ik(SOURCES[srcIndex], { w: 720, q: 68 }),
     srcIndex,
-    x: 33 + randInt(34),
-    y: 33 + randInt(34),
-    zoom: 330 + randInt(160),
+    x: 38 + randInt(24),
+    y: 38 + randInt(24),
+    zoom: 400 + randInt(170),
   };
 }
 
@@ -109,14 +109,14 @@ export default function MemoryMosaic({ className = "" }) {
 
   return (
     <div
-      className={`grid h-full w-full grid-flow-dense grid-cols-4 gap-[3px] sm:grid-cols-6 lg:grid-cols-8 ${className}`}
+      className={`grid h-full w-full grid-flow-dense grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 ${className}`}
       style={{ gridAutoRows: "13vh" }}
       aria-hidden="true"
     >
       {tiles.map((crop, i) => (
         <div
           key={i}
-          className={`relative overflow-hidden rounded-[2px] bg-shade ${
+          className={`relative overflow-hidden bg-ink/5 ${
             SPAN_PATTERN[i % SPAN_PATTERN.length]
           }`}
         >
