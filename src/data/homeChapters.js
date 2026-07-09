@@ -21,7 +21,7 @@ export const homeChapters = [
     kicker: "The Shroud",
     title: "A Passage, in Cloth",
     to: "/shroud",
-    image: `${IK}/Shrouds/20190902-LMH-1987.jpg?updatedAt=1738387544640`,
+    image: `${IK}/Shrouds/20190902-LMH-1990-Photoroom.png`,
     fit: "contain",
     shadow: true,
     effect: "veil",
